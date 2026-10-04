@@ -1330,3 +1330,358 @@ body.ed-dash .db-panel.active .db-panel-chart {
   background: #0f172a;
   transition: width 100ms linear;
 }
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN SYSTEM & MOBILE LANDSCAPE RECOMMENDATION OVERLAY
+   Maintains 100% native desktop integrity (min-width: 1024px)
+   Optimizes Tablet, Mobile Landscape, and Mobile Portrait experiences
+   ========================================================================== */
+
+/* Orientation Overlay - Hidden by default on desktop/laptop */
+.orientation-overlay {
+  display: none;
+}
+
+/* Trigger ONLY on screens <= 820px when in Portrait mode */
+@media screen and (max-width: 820px) and (orientation: portrait) {
+  .orientation-overlay:not(.is-dismissed) {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px;
+    animation: fadeIn 0.3s ease-out;
+  }
+}
+
+.orientation-card {
+  max-width: 360px;
+  width: 100%;
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  padding: 32px 24px 28px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  position: relative;
+}
+
+.orient-icon-wrap {
+  position: relative;
+  width: 80px;
+  height: 64px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orient-device-icon {
+  width: 34px;
+  height: 54px;
+  border: 2.5px solid #ffffff;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotatePhoneAnim 2.6s ease-in-out infinite alternate;
+}
+
+.orient-device-screen {
+  width: 22px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 4px;
+}
+
+@keyframes rotatePhoneAnim {
+  0%, 25% {
+    transform: rotate(0deg);
+  }
+  75%, 100% {
+    transform: rotate(-90deg);
+  }
+}
+
+.orient-rotate-arrow {
+  position: absolute;
+  top: -4px;
+  right: 6px;
+  font-size: 20px;
+  color: #fb923c;
+  font-weight: 700;
+  animation: pulseRotate 2.6s ease-in-out infinite;
+}
+
+@keyframes pulseRotate {
+  0%, 25% { opacity: 0.4; transform: scale(0.9); }
+  50%, 100% { opacity: 1; transform: scale(1.15); }
+}
+
+.orient-badge {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fb923c;
+  background: rgba(251, 146, 60, 0.15);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+}
+
+.orient-title {
+  font-family: var(--font-serif, "Instrument Serif", Georgia, serif);
+  font-size: 25px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.orient-desc {
+  font-family: var(--font-sans, "Inter", sans-serif);
+  font-size: 12.5px;
+  color: #94a3b8;
+  line-height: 1.55;
+  margin: 0 0 22px;
+}
+
+.orient-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.orient-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 22px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: var(--font-sans, "Inter", sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
+  transition: transform 0.15s, background 0.15s;
+}
+
+.orient-btn-primary:active {
+  transform: scale(0.97);
+}
+
+.orient-btn-secondary {
+  padding: 10px 16px;
+  background: transparent;
+  color: #cbd5e1;
+  font-family: var(--font-sans, "Inter", sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.orient-btn-secondary:active,
+.orient-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   WEB STORY (index_2.html) RESPONSIVE OPTIMIZATIONS
+   ========================================================================== */
+
+/* Mobile Portrait Scrollytelling View (When user stays in portrait) */
+@media screen and (max-width: 1023px) and (orientation: portrait) {
+  .chapter-section {
+    padding: 24px 14px 44px !important;
+  }
+  .chapter-container {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+  }
+  .visual-col {
+    position: sticky !important;
+    top: 60px !important;
+    z-index: 45 !important;
+    margin-bottom: 16px !important;
+    background: transparent !important;
+  }
+  .visual-stage-wrapper {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+  .visual-stage-card {
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12) !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  }
+  .stage-topbar {
+    padding: 7px 12px !important;
+  }
+  .stage-title {
+    font-size: 12.5px !important;
+  }
+  .stage-tag-badge {
+    font-size: 9px !important;
+    padding: 2px 6px !important;
+  }
+  .stage-filters {
+    gap: 3px !important;
+  }
+  .chip-soft {
+    font-size: 10.5px !important;
+    padding: 3px 8px !important;
+  }
+  .visual-stage-card .chart-canvas {
+    height: 38vh !important;
+    min-height: 250px !important;
+    max-height: 340px !important;
+    width: 100% !important;
+  }
+  .narrative-col {
+    margin-top: 6px !important;
+  }
+  .story-step {
+    padding: 16px 16px !important;
+    margin-bottom: 20px !important;
+    border-radius: 14px !important;
+  }
+  .step-title {
+    font-size: 17px !important;
+  }
+  .step-text {
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
+  }
+  .step-highlight-pill {
+    padding: 5px 12px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* Mobile Landscape & Tablet Landscape (e.g., iPhone Landscape 844x390, 896x414) */
+@media screen and (min-width: 560px) and (orientation: landscape) and (max-width: 1023px) {
+  .chapter-section {
+    padding: 36px 18px 50px !important;
+  }
+  .chapter-container {
+    display: grid !important;
+    grid-template-columns: minmax(280px, 360px) 1fr !important;
+    gap: 1.5rem !important;
+    align-items: stretch !important;
+  }
+  .chapter-container.layout-reversed {
+    grid-template-columns: 1fr minmax(280px, 360px) !important;
+  }
+  .visual-col {
+    position: relative !important;
+    height: 100% !important;
+  }
+  .visual-stage-wrapper {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 60px !important;
+    height: calc(100vh - 76px) !important;
+    max-height: 520px !important;
+    align-self: start !important;
+    z-index: 10 !important;
+  }
+  .visual-stage-card .chart-canvas {
+    flex: 1 1 auto !important;
+    height: calc(100vh - 175px) !important;
+    min-height: 230px !important;
+    max-height: 420px !important;
+  }
+  .story-step {
+    padding: 18px !important;
+    margin-bottom: 26px !important;
+  }
+}
+
+/* ==========================================================================
+   DASHBOARD (dashboard_2.html) RESPONSIVE OPTIMIZATIONS
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .db-header {
+    height: 50px !important;
+    padding: 0 12px !important;
+  }
+  .db-brand-sub {
+    display: none !important;
+  }
+  .db-brand-title {
+    font-size: 14px !important;
+  }
+  .db-brand-circle {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .db-brand-circle img {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .db-header-right .pill-btn.sm {
+    padding: 5px 10px !important;
+    font-size: 11px !important;
+  }
+  .db-nav-arrows {
+    display: none !important;
+  }
+  .db-tabbar {
+    height: 42px !important;
+    padding: 0 8px !important;
+    gap: 4px !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .db-tabbar::-webkit-scrollbar {
+    display: none !important;
+  }
+  .db-tab {
+    padding: 0 10px !important;
+    font-size: 11px !important;
+    flex-shrink: 0 !important;
+  }
+  .db-tab-num {
+    font-size: 9.5px !important;
+    margin-right: 3px !important;
+  }
+  .db-panel-topbar {
+    padding: 8px 12px !important;
+  }
+  .db-panel-meta .db-panel-label {
+    font-size: 10px !important;
+  }
+  .db-panel-meta .db-panel-title {
+    font-size: 13px !important;
+  }
+  .db-panel-chart {
+    height: calc(100vh - 160px) !important;
+    min-height: 330px !important;
+  }
+  .db-panel-footer {
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+}

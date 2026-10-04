@@ -1264,5 +1264,61 @@
   <!-- CONTROLLER -->
   <script src="./assets/js/main.js?v=10.0"></script>
 
+
+  <!-- ORIENTATION OVERLAY (MOBILE PORTRAIT ONLY) -->
+  <aside id="orientation-overlay" class="orientation-overlay" aria-label="Rekomendasi Orientasi Lanskap">
+    <div class="orientation-card">
+      <div class="orient-icon-wrap" aria-hidden="true">
+        <div class="orient-device-icon">
+          <div class="orient-device-screen"></div>
+        </div>
+        <div class="orient-rotate-arrow">&#8635;</div>
+      </div>
+      <span class="orient-badge">Optimasi Visual Mobile</span>
+      <h3 class="orient-title">Buka dalam Mode Lanskap</h3>
+      <p class="orient-desc">
+        Visualisasi ini memuat peta 514 daerah, hierarki makroekonomi, dan 535 rute maritim global yang dirancang optimal untuk layar horizontal (Lanskap).
+      </p>
+      <div class="orient-actions">
+        <button type="button" class="orient-btn-primary" onclick="dismissOrientationOverlay(true)">
+          <span>Putar Layar Sekarang</span> &rarr;
+        </button>
+        <button type="button" class="orient-btn-secondary" onclick="dismissOrientationOverlay(false)">
+          Tetap Lanjut di Mode Potret
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <script>
+    function dismissOrientationOverlay(requestFullscreen) {
+      var overlay = document.getElementById('orientation-overlay');
+      if (overlay) {
+        overlay.classList.add('is-dismissed');
+        try { sessionStorage.setItem('dismiss_orient', '1'); } catch(e){}
+      }
+      if (requestFullscreen && document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().then(function() {
+          if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock('landscape').catch(function(){});
+          }
+        }).catch(function(){});
+      }
+    }
+    try {
+      if (sessionStorage.getItem('dismiss_orient') === '1') {
+        var el = document.getElementById('orientation-overlay');
+        if (el) el.classList.add('is-dismissed');
+      }
+    } catch(e){}
+    if (window.screen && window.screen.orientation) {
+      window.screen.orientation.addEventListener('change', function() {
+        setTimeout(function() {
+          window.dispatchEvent(new Event('resize'));
+        }, 300);
+      });
+    }
+  </script>
+
 </body>
 </html>
