@@ -95,6 +95,10 @@
     
     <!-- HERO SECTION (Fits 100vh Single Screen) -->
     <section class="hero-section" id="hero">
+      <video class="hero-bg-video" autoplay muted loop playsinline poster="assets/img/hero_poster.jpg" aria-hidden="true">
+        <source src="https://designerstephen.github.io/public-assets/videos/serene-art-hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-bg-overlay" aria-hidden="true"></div>
       <div class="hero-inner">
         <h1 class="hero-title">
           Jejak Mineral <span class="title-handwritten">Nusantara</span> di Peta Perdagangan Global
@@ -139,6 +143,20 @@
             </div>
             <div class="scenario-card-value">$49.7 Miliar</div>
             <div class="scenario-card-desc">Nilai transaksi komoditas tambang ke 84 negara mitra dunia.</div>
+          </div>
+        </div>
+
+        <!-- DYNAMIC MINERAL ARTIFACT SHOWCASE -->
+        <div class="hero-mineral-strip">
+          <div class="mineral-strip-inner">
+            <div class="mineral-img-wrap">
+              <img src="assets/img/editorial_minerals.jpg" alt="Spesimen Mineral Ekstraktif Resmi Nusantara BPS" class="mineral-showcase-img" loading="lazy">
+              <div class="mineral-img-overlay"></div>
+            </div>
+            <div class="mineral-caption-row">
+              <span class="mineral-tag">Koleksi Spesimen Ekstraktif Resmi</span>
+              <span class="mineral-names">Nikel Sulawesi &middot; Kasiterit Timah Bangka &middot; Kuarsa-Hematit Papua &middot; Kromit Sulawesi &middot; Belerang Kawah Ijen</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1241,7 +1259,11 @@
     </section>
 
     <!-- CONVERSION SECTION TO DASHBOARD -->
-    <section class="conversion-section">
+    <section class="conversion-section" id="eksplorasi-lanjut">
+      <video class="conversion-bg-video" autoplay muted loop playsinline poster="assets/img/hero_poster.jpg" aria-hidden="true">
+        <source src="https://designerstephen.github.io/public-assets/videos/serene-art-hero.mp4" type="video/mp4">
+      </video>
+      <div class="conversion-bg-overlay" aria-hidden="true"></div>
       <div class="conversion-card">
         <div class="conversion-icon">
           <div class="coral-dot"></div>
@@ -1303,6 +1325,61 @@
 
   <!-- CONTROLLER -->
   <script src="./assets/js/main.js?v=8.0"></script>
+
+  <!-- ORIENTATION RECOMMENDATION OVERLAY (MOBILE PORTRAIT ONLY) -->
+  <aside id="orientation-overlay" class="orientation-overlay" aria-label="Rekomendasi Orientasi Lanskap">
+    <div class="orientation-card">
+      <div class="orient-icon-wrap" aria-hidden="true">
+        <div class="orient-device-icon">
+          <div class="orient-device-screen"></div>
+        </div>
+        <div class="orient-rotate-arrow">&#8635;</div>
+      </div>
+      <span class="orient-badge">Optimasi Visual Mobile</span>
+      <h3 class="orient-title">Buka dalam Mode Lanskap</h3>
+      <p class="orient-desc">
+        Visualisasi ini memuat peta 519 daerah, hierarki makroekonomi, dan 535 rute maritim global yang dirancang optimal untuk layar horizontal (Lanskap).
+      </p>
+      <div class="orient-actions">
+        <button type="button" class="orient-btn-primary" onclick="dismissOrientationOverlay(true)">
+          <span>Putar Layar Sekarang</span> &rarr;
+        </button>
+        <button type="button" class="orient-btn-secondary" onclick="dismissOrientationOverlay(false)">
+          Tetap Lanjut di Mode Potret
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <script>
+    function dismissOrientationOverlay(requestFullscreen) {
+      var overlay = document.getElementById('orientation-overlay');
+      if (overlay) {
+        overlay.classList.add('is-dismissed');
+        try { sessionStorage.setItem('dismiss_orient_v1', '1'); } catch(e){}
+      }
+      if (requestFullscreen && document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().then(function() {
+          if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock('landscape').catch(function(){});
+          }
+        }).catch(function(){});
+      }
+    }
+    try {
+      if (sessionStorage.getItem('dismiss_orient_v1') === '1') {
+        var el = document.getElementById('orientation-overlay');
+        if (el) el.classList.add('is-dismissed');
+      }
+    } catch(e){}
+    if (window.screen && window.screen.orientation) {
+      window.screen.orientation.addEventListener('change', function() {
+        setTimeout(function() {
+          window.dispatchEvent(new Event('resize'));
+        }, 300);
+      });
+    }
+  </script>
 
 </body>
 </html>
