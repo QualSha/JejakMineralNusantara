@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#060911">
+  <title>Denyut Manufaktur dan Tambang: Dari PDRB Daerah hingga Rantai Pasok Global</title>
+  <meta name="description" content="Visualisasi data interaktif scrollytelling yang memetakan transformasi ekonomi makro komoditas ekstraktif Indonesia dari PDRB 519 daerah hingga rantai pasok maritim global.">
+  <meta name="keywords" content="Visualisasi Data, Scrollytelling, PDB Indonesia, PDRB Tambang, Hilirisasi Nikel, Batubara, ECharts, Leaflet.js, Esri">
+  <meta name="author" content="Data Visualization Engineer & Full-stack Developer">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Denyut Manufaktur dan Tambang: Dari PDRB Daerah hingga Rantai Pasok Global">
+  <meta property="og:description" content="Eksplorasi interaktif 6 bab data visual: Treemap PDB, Choropleth 519 Kabupaten/Kota, Simbol Proporsional Pelabuhan, Sunburst Ekspor, Sankey Rantai Pasok, dan Global Flow Map.">
+  <meta property="og:type" content="website">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css?v=9">
+</head>
+<body>
+
+  <!-- Aksesibilitas: Skip link -->
+  <a href="#main-content" class="skip-link">Loncat ke konten utama</a>
+
+  <!-- Top Sticky Navigation & Reading Progress Bar -->
+  <header class="top-navbar" role="banner">
+    <div class="brand-wrapper">
+      <div class="brand-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-title">Denyut Manufaktur &amp; Tambang</div>
+        <div class="brand-subtitle">Visual Data Journalism &bull; BPS &amp; ESDM RI</div>
+      </div>
+    </div>
+
+    <!-- Chapter Fast Navigation -->
+    <nav class="nav-chapters" aria-label="Navigasi Cepat Bab Cerita">
+      <a href="#bab1" class="nav-pill active" data-chapter="1">
+        <span class="nav-pill-num">01</span> Fondasi PDB
+      </a>
+      <a href="#bab2" class="nav-pill" data-chapter="2">
+        <span class="nav-pill-num">02</span> Episentrum Daerah
+      </a>
+      <a href="#bab3" class="nav-pill" data-chapter="3">
+        <span class="nav-pill-num">03</span> Pintu Pelabuhan
+      </a>
+      <a href="#bab4" class="nav-pill" data-chapter="4">
+        <span class="nav-pill-num">04</span> Pasar Global
+      </a>
+      <a href="#bab5" class="nav-pill" data-chapter="5">
+        <span class="nav-pill-num">05</span> Rantai Pasok
+      </a>
+      <a href="#bab6" class="nav-pill" data-chapter="6">
+        <span class="nav-pill-num">06</span> Arus Dunia
+      </a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="peta_choropleth.html" target="_blank" rel="noopener" class="btn-nav" title="Buka Peta Standalone 519 Wilayah Fullscreen">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+          <line x1="8" y1="2" x2="8" y2="18"></line>
+          <line x1="16" y1="6" x2="16" y2="22"></line>
+        </svg>
+        <span>Peta Esri 519 Kab/Kota</span>
+      </a>
+      <a href="#metodologi" class="btn-nav">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span>Metodologi IEEE</span>
+      </a>
+    </div>
+
+    <!-- Reading Progress Bar -->
+    <div class="progress-container" aria-hidden="true">
+      <div class="progress-bar-fill"></div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-badge-wrap">
+      <div class="hero-pulse-dot" aria-hidden="true"></div>
+      <span class="hero-badge-text">Laporan Interaktif Sains Data Spasial &amp; Ekonomi Makro</span>
+    </div>
+
+    <h1 class="hero-title">
+      Denyut Manufaktur dan Tambang:<br>
+      Dari PDRB Daerah hingga Rantai Pasok Global
+    </h1>
+
+    <p class="hero-lead">
+      Menelusuri bagaimana transformasi komoditas ekstraktif Indonesia—dari batubara Kalimantan, nikel Sulawesi, hingga tembaga Papua—menggerakkan sepertiga perekonomian nasional, melahirkan konsentrasi PDRB di 519 kabupaten/kota, dan berlayar melalui simpul maritim menuju sentra industri dunia.
+    </p>
+
+    <!-- Key Economic Indicators Grid -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">PDB Indonesia (ADHB)</div>
+        <div class="kpi-val mono">Rp&nbsp;20.892,4&nbsp;T</div>
+        <div class="kpi-subtext">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+          Pertumbuhan +5,05% YoY (BPS RI)
+        </div>
+      </div>
+
+      <div class="kpi-card emerald">
+        <div class="kpi-label">Pangsa Manufaktur &amp; Tambang</div>
+        <div class="kpi-val mono">29,20%</div>
+        <div class="kpi-subtext">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+          Pilar Terbesar Sektor Riil
+        </div>
+      </div>
+
+      <div class="kpi-card amber">
+        <div class="kpi-label">Cakupan Wilayah Analisis</div>
+        <div class="kpi-val mono">519 Kab/Kota</div>
+        <div class="kpi-subtext">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Poligon Peta Resmi Esri &amp; BPS
+        </div>
+      </div>
+
+      <div class="kpi-card violet">
+        <div class="kpi-label">Ekspor Hilirisasi Tambang</div>
+        <div class="kpi-val mono">$49,69 B</div>
+        <div class="kpi-subtext">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          74 Pelabuhan Ekspor &bull; 84 Negara Mitra
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Scrollytelling Split-Screen Section -->
+  <main class="scrolly-container" id="main-content" role="main">
+    
+    <!-- Left Column: Scrolling Story Cards -->
+    <div class="narrative-col">
+      
+      <!-- Bab 1: Fondasi Ekonomi (Hierarki 1) -->
+      <article class="story-step is-active" id="bab1" data-step="1">
+        <div class="step-card">
+          <span class="step-meta-badge">Bab 1 &bull; Hierarki Struktur PDB</span>
+          <h2 class="step-title">Fondasi Ekonomi: Tulang Punggung Nilai Tambah Nasional</h2>
+          <p class="step-narrative">
+            Perekonomian Indonesia berakar pada transformasi sumber daya alam. Dari total Produk Domestik Bruto (PDB) atas dasar harga berlaku sebesar <strong>Rp&nbsp;20.892,4 Triliun</strong>, sektor sekunder dan primer menyerap jutaan tenaga kerja dan menopang neraca perdagangan.
+          </p>
+          <div class="step-callout">
+            <strong>Fakta Kunci PDB:</strong> Sektor <em>Industri Pengolahan (Manufaktur)</em> merupakan kontributor tunggal terbesar perekonomian nasional dengan pangsa <strong>18,70% (Rp&nbsp;3.906,8 Triliun)</strong>, disusul oleh sektor <em>Pertambangan dan Penggalian</em> sebesar <strong>10,50% (Rp&nbsp;2.193,7 Triliun)</strong>. Gabungan keduanya menyumbang hampir sepertiga total PDB Republik Indonesia.
+          </div>
+          <p class="step-narrative">
+            Kebijakan hilirisasi mineral memicu pergeseran struktural: bijih mentah diolah di dalam negeri untuk melipatgandakan nilai tambah (<em>value-added multiplier</em>).
+          </p>
+
+          <div class="step-controls">
+            <span style="font-size:11px;color:#94a3b8;width:100%;margin-bottom:4px;font-weight:600;">Eksplorasi Sektor:</span>
+            <button type="button" class="btn-interactive active" data-pdb-filter="all">Semua Sektor (17 Lapangan Usaha)</button>
+            <button type="button" class="btn-interactive" data-pdb-filter="sekunder">Sektor Sekunder (Manufaktur &amp; Konstruksi)</button>
+            <button type="button" class="btn-interactive" data-pdb-filter="primer">Sektor Primer (Tambang &amp; Tani)</button>
+            <button type="button" class="btn-interactive" data-pdb-filter="tersier">Sektor Tersier (Jasa &amp; Logistik)</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bab 2: Memetakan Episentrum Tambang (Geospasial 1) -->
+      <article class="story-step" id="bab2" data-step="2">
+        <div class="step-card">
+          <span class="step-meta-badge" style="color:#10b981;background:rgba(16,185,129,0.12);border-color:rgba(16,185,129,0.25);">Bab 2 &bull; Geospasial 519 Kabupaten/Kota</span>
+          <h2 class="step-title">Memetakan Episentrum Tambang: Disparitas 519 Wilayah</h2>
+          <p class="step-narrative">
+            Peta di samping memvisualisasikan seluruh <strong>519 Kabupaten dan Kota di Indonesia</strong> menggunakan data spasial BPS. Kolom <code>kabupaten</code> dan <code>pdrb_tambang_milyar</code> dipetakan langsung di atas basemap netral <strong>Esri World Gray Canvas</strong>.
+          </p>
+          <div class="step-callout emerald">
+            <strong>Sentra Tambang Tertinggi di Indonesia:</strong>
+            <ul style="margin-top:6px;padding-left:1.2rem;line-height:1.6;">
+              <li><strong>Kab. Mimika (Papua Tengah):</strong> PDRB Tambang menembus <strong>Rp&nbsp;114.486 Milyar (Rp&nbsp;114,5 T)</strong> berkat Grasberg.</li>
+              <li><strong>Kab. Kutai Kartanegara (Kaltim):</strong> <strong>Rp&nbsp;111.867 Milyar (Rp&nbsp;111,9 T)</strong> dari batubara &amp; gas alam.</li>
+              <li><strong>Kab. Kutai Timur (Kaltim):</strong> <strong>Rp&nbsp;107.278 Milyar (Rp&nbsp;107,3 T)</strong> dari batubara termal.</li>
+              <li><strong>Kab. Bengkalis (Riau):</strong> <strong>Rp&nbsp;95.235 Milyar</strong> (Migas Blok Rokan).</li>
+              <li><strong>Kab. Morowali (Sulteng):</strong> <strong>Rp&nbsp;32.081 Milyar</strong> (Pusat hilirisasi nikel &amp; baterai).</li>
+            </ul>
+          </div>
+          <p class="step-narrative">
+            Gunakan tombol palet di pojok kanan atas peta untuk beralih antara skema <strong>YlOrRd (Merah-Emas)</strong> dan <strong>Viridis (Ramah Buta Warna)</strong>.
+          </p>
+
+          <div class="step-controls">
+            <span style="font-size:11px;color:#94a3b8;width:100%;margin-bottom:4px;font-weight:600;">Navigasi Cepat Episentrum:</span>
+            <button type="button" class="btn-interactive" data-map-focus="mimika">Fokus: Mimika (Rp&nbsp;114&nbsp;T)</button>
+            <button type="button" class="btn-interactive" data-map-focus="kaltim">Fokus: Kaltim (Kukar &amp; Kutim)</button>
+            <button type="button" class="btn-interactive" data-map-focus="morowali">Fokus: Morowali (Nikel)</button>
+            <button type="button" class="btn-interactive" data-map-focus="halmahera">Fokus: Halmahera (Weda Bay)</button>
+            <button type="button" class="btn-interactive" data-map-focus="indonesia">Lihat Seluruh Nusantara</button>
+          </div>
+        </div>
+      </article>
+
+            <!-- Bab 3: Pintu Keluar Komoditas (Geospasial 2) -->
+      <article class="story-step" id="bab3" data-step="3">
+        <div class="step-card">
+          <span class="step-meta-badge" style="color:#f59e0b;background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.25);">Bab 3 &bull; Geospasial Simbol Proporsional</span>
+          <h2 class="step-title">Pintu Keluar Komoditas: Gerbang Logistik Maritim Pelabuhan</h2>
+          <p class="step-narrative">
+            Hasil olahan tambang membutuhkan konektivitas laut yang tangguh. Bab ini memetakan <strong>74 simpul pelabuhan ekspor</strong> di seluruh Indonesia, diolah langsung dari data resmi <code>ekspor_tambang.xlsx</code> dan koordinat presisi <code>koordinat_pelabuhan.xlsx</code> di atas batas 519 kabupaten/kota.
+          </p>
+          <div class="step-callout amber">
+            <strong>Kompensasi Persepsi Flannery:</strong> Radius lingkaran dihitung proporsional terhadap eksponen Flannery <code>R = 3,5 + 13 &times; (V / V<sub>max</sub>)<sup>0,57</sup></code> guna menjaga ketelitian visual tanpa menutupi poligon wilayah. Total ekspor energi &amp; tambang melalui 74 pelabuhan ini mencapai <strong>$49,69 Miliar USD</strong>.
+            <ul style="margin-top:6px;padding-left:1.2rem;line-height:1.6;">
+              <li><strong>Banjarmasin (Kalsel):</strong> <strong>$6,45 Miliar USD</strong> (Hub ekspor batubara Barito-Taboneo).</li>
+              <li><strong>Samarinda (Kaltim):</strong> <strong>$4,17 Miliar USD</strong> (Koridor batubara Sungai Mahakam).</li>
+              <li><strong>Amamapare (Papua Tengah):</strong> <strong>$3,62 Miliar USD</strong> (Terminal konsentrat tembaga &amp; emas Freeport).</li>
+              <li><strong>Teluk Bintuni (Papua Barat):</strong> <strong>$3,25 Miliar USD</strong> (Terminal kriogenik LNG Tangguh).</li>
+              <li><strong>Balikpapan (Kaltim):</strong> <strong>$3,16 Miliar USD</strong> (Hub kilang migas &amp; batubara lepas pantai).</li>
+              <li><strong>Bahudopi / Morowali (Sulteng):</strong> <strong>$1,67 Miliar USD</strong> (Hilirisasi nikel terpadu IMIP).</li>
+            </ul>
+          </div>
+          <p class="step-narrative">
+            Setiap simpul melayani kargo bernilai tinggi: dari armada kapal curah raksasa di Kalimantan hingga kapal tanker gas kriogenik di Papua Barat.
+          </p>
+
+          <div class="step-controls">
+            <span style="font-size:11px;color:#94a3b8;width:100%;margin-bottom:4px;font-weight:600;">Jelajahi Simpul Pelabuhan Utama:</span>
+            <button type="button" class="btn-interactive" data-map-focus="banjarmasin">Banjarmasin ($6,5 B)</button>
+            <button type="button" class="btn-interactive" data-map-focus="samarinda">Samarinda ($4,2 B)</button>
+            <button type="button" class="btn-interactive" data-map-focus="amamapare">Amamapare ($3,6 B)</button>
+            <button type="button" class="btn-interactive" data-map-focus="bintuni">Bintuni ($3,2 B)</button>
+            <button type="button" class="btn-interactive" data-map-focus="balikpapan">Balikpapan ($3,2 B)</button>
+            <button type="button" class="btn-interactive" data-map-focus="bahudopi">Bahodopi ($1,7 B)</button>
+            <button type="button" class="btn-interactive" data-map-focus="indonesia">Reset Seluruh Nusantara</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bab 4: Pasar Global Komoditas Kita (Hierarki 2) -->
+      <article class="story-step" id="bab4" data-step="4">
+        <div class="step-card">
+          <span class="step-meta-badge" style="color:#a855f7;background:rgba(168,85,247,0.12);border-color:rgba(168,85,247,0.25);">Bab 4 &bull; Hierarki Ekspor Global</span>
+          <h2 class="step-title">Pasar Global Komoditas Kita: Menembus Lima Benua</h2>
+          <p class="step-narrative">
+            Ke mana seluruh komoditas hilirisasi tersebut berlayar? Melalui <strong>Sunburst Chart Multi-Ring</strong>, kita menelusuri hierarki nilai ekspor dari skala global, 6 kawasan benua, hingga negara pembeli akhir.
+          </p>
+          <div class="step-callout violet">
+            <strong>Distribusi Kawasan Konsumen (Data Riil Ekspor):</strong>
+            <ul style="margin-top:6px;padding-left:1.2rem;line-height:1.6;">
+              <li><strong>Asia (96,8% / $48,10&nbsp;Miliar USD):</strong> Gravitasi utama dipimpin Tiongkok ($15,80&nbsp;B), India ($5,77&nbsp;B), Jepang ($5,74&nbsp;B), Korea Selatan ($4,06&nbsp;B), Malaysia ($3,68&nbsp;B), dan Filipina ($3,66&nbsp;B).</li>
+              <li><strong>Eropa (1,4% / $680&nbsp;Juta USD):</strong> Meliputi Belanda ($140&nbsp;M), Italia ($140&nbsp;M), dan Turki ($100&nbsp;M).</li>
+              <li><strong>Australia &amp; Oseania (1,2% / $610&nbsp;Juta USD):</strong> Meliputi Kepulauan Marshall ($330&nbsp;M) dan Australia ($170&nbsp;M).</li>
+              <li><strong>Amerika &amp; Afrika (0,6% / $300&nbsp;Juta USD):</strong> Meliputi Brasil ($150&nbsp;M), Afrika Selatan ($60&nbsp;M), dan Meksiko ($40&nbsp;M).</li>
+            </ul>
+          </div>
+          <p class="step-narrative">
+            Klik pada irisan cincin benua untuk memperbesar rincian negara tujuan dan komoditas spesifik.
+          </p>
+
+          <div class="step-controls">
+            <span style="font-size:11px;color:#94a3b8;width:100%;margin-bottom:4px;font-weight:600;">Filter Kawasan Benua:</span>
+            <button type="button" class="btn-interactive active" data-sunburst-continent="all">Semua Benua (Global)</button>
+            <button type="button" class="btn-interactive" data-sunburst-continent="Asia">Asia ($48,1&nbsp;B)</button>
+            <button type="button" class="btn-interactive" data-sunburst-continent="Eropa">Eropa ($680&nbsp;M)</button>
+            <button type="button" class="btn-interactive" data-sunburst-continent="Australia">Australia &amp; Oseania ($610&nbsp;M)</button>
+            <button type="button" class="btn-interactive" data-sunburst-continent="Amerika">Amerika ($220&nbsp;M)</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bab 5: Urat Nadi Rantai Pasok (Aliran 1) -->
+      <article class="story-step" id="bab5" data-step="5">
+        <div class="step-card">
+          <span class="step-meta-badge" style="color:#06b6d4;background:rgba(6,182,212,0.12);border-color:rgba(6,182,212,0.25);">Bab 5 &bull; Jaringan Aliran Rantai Pasok</span>
+          <h2 class="step-title">Urat Nadi Rantai Pasok: Konektivitas Simpul ke Mitra Dagang</h2>
+          <p class="step-narrative">
+            Perdagangan internasional adalah jaringan logistik maritim yang terarah. <strong>Diagram Sankey</strong> di sisi kanan memetakan koneksi bilateral langsung dari pelabuhan muat Indonesia ke negara tujuan.
+          </p>
+          <div class="step-callout">
+            <strong>Sorotan Rute Interaktif (Path-Highlighting):</strong> Arahkan kursor pada simpul pelabuhan atau negara untuk menyorot seluruh garis tepi yang terhubung. Amati bagaimana <strong>Pelabuhan IMIP Bahodopi</strong> dan <strong>IWIP Weda Bay</strong> memiliki keterkaitan pasokan yang kuat dengan industri baja dan baterai Tiongkok dan Korea Selatan.
+          </div>
+          <p class="step-narrative">
+            Sementara itu, <strong>Pelabuhan Tanjung Perak &amp; Gresik</strong> menyalurkan katoda tembaga murni bersertifikasi LME ke manufaktur elektronik di Jepang, India, dan Amerika Serikat.
+          </p>
+
+          <div class="step-controls">
+            <span style="font-size:11px;color:#94a3b8;width:100%;margin-bottom:4px;font-weight:600;">Saring Aliran Komoditas:</span>
+            <button type="button" class="btn-interactive active" data-sankey-commodity="all">Semua Aliran Logistik</button>
+            <button type="button" class="btn-interactive" data-sankey-commodity="27">Batubara &amp; Energi Mineral (Bab 27)</button>
+            <button type="button" class="btn-interactive" data-sankey-commodity="26">Bijih &amp; Konsentrat Logam (Bab 26)</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bab 6: Menjangkau Dunia (Aliran 2 / Grand Finale) -->
+      <article class="story-step" id="bab6" data-step="6">
+        <div class="step-card">
+          <span class="step-meta-badge" style="color:#fde725;background:rgba(253,231,37,0.12);border-color:rgba(253,231,37,0.25);">Bab 6 &bull; Grand Finale Arus Global</span>
+          <h2 class="step-title">Menjangkau Dunia: Arus Pelayaran Samudera Tanpa Henti</h2>
+          <p class="step-narrative">
+            Sebagai penutup, kita memandang Bumi secara menyeluruh. Kapal-kapal pengangkut komoditas Indonesia melintasi Selat Malaka, Samudera Hindia, hingga Samudera Pasifik menuju pelabuhan bongkar raksasa dunia.
+          </p>
+          <div class="step-callout" style="border-left-color:#fde725;">
+            <strong>Animasi Aliran Partikel Geodesik:</strong> Peta dunia memancarkan garis lengkung busur (<em>arc lines</em>) dengan partikel cahaya menyala yang bergerak searah jarum pelayaran. Ketebalan garis mewakili volume tonase kargo. Dari Indonesia, denyut komoditas menggerakkan rantai pasok industri teknologi global.
+          </div>
+          <p class="step-narrative">
+            Indonesia membuktikan perannya bukan sekadar eksportir bahan mentah, melainkan simpul krusial dalam transisi energi bersih dan industri teknologi modern.
+          </p>
+
+          <div class="step-controls">
+            <span style="font-size:11px;color:#94a3b8;width:100%;margin-bottom:4px;font-weight:600;">Saring Koridor Maritim:</span>
+            <button type="button" class="btn-interactive active" data-global-filter="all">Semua Koridor Samudera</button>
+            <button type="button" class="btn-interactive" data-global-filter="Asia">Koridor Asia-Pasifik</button>
+            <button type="button" class="btn-interactive" data-global-filter="Eropa">Koridor Terusan Suez ➔ Eropa</button>
+            <button type="button" class="btn-interactive" data-global-filter="Amerika">Koridor Trans-Pasifik ➔ Amerika</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Right Column: Sticky Visualization Stage -->
+    <div class="stage-col">
+      <div class="sticky-viewport">
+        
+        <!-- Stage Top Bar -->
+        <div class="stage-header">
+          <div class="stage-title-wrap">
+            <span class="stage-active-badge">Treemap Multi-Level (BPS)</span>
+            <span class="stage-title">Bab 1: Hierarki Struktur PDB Nasional</span>
+          </div>
+          <div class="stage-actions">
+            <button type="button" class="btn-stage-tool" id="btn-fullscreen" title="Layar Penuh" aria-label="Tampilkan visualisasi dalam mode layar penuh">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Layer Containers for All 6 Chapters -->
+        <div class="stage-content">
+          
+          <!-- Bab 1: Treemap -->
+          <div class="vis-layer active" id="vis-layer-1">
+            <div id="chart-treemap" class="chart-canvas"></div>
+          </div>
+
+          <!-- Bab 2 & 3: Leaflet Geospatial Map (Esri + 519 Wilayah) -->
+          <div class="vis-layer" id="vis-layer-map">
+            <div id="map-indonesia"></div>
+            <!-- Floating Dynamic Legend -->
+            <div class="stage-floating-legend" id="map-legend-box"></div>
+          </div>
+
+          <!-- Bab 4: Sunburst -->
+          <div class="vis-layer" id="vis-layer-4">
+            <div id="chart-sunburst" class="chart-canvas"></div>
+          </div>
+
+          <!-- Bab 5: Sankey -->
+          <div class="vis-layer" id="vis-layer-5">
+            <div id="chart-sankey" class="chart-canvas"></div>
+          </div>
+
+          <!-- Bab 6: Global Flow Map -->
+          <div class="vis-layer" id="vis-layer-6">
+            <div id="map-global" class="chart-canvas"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Methodology, Visual Encoding & Academic Documentation Section -->
+  <section class="methodology-section" id="metodologi">
+    <div class="methodology-header">
+      <h2 class="methodology-title">Metodologi &amp; Landasan Desain Visualisasi (Standar IEEE)</h2>
+      <p style="color:var(--text-secondary);max-width:900px;">
+        Dokumentasi teknis pemetaan variabel visual, arsitektur data geospasial 519 kabupaten/kota, dan kepatuhan terhadap prinsip persepsi visual jurnalisme data.
+      </p>
+    </div>
+
+    <div class="methodology-grid">
+      <div class="methodology-card">
+        <h4>1. Visual Encoding &amp; Dekomposisi Data</h4>
+        <p>
+          Proyek ini menerapkan taksonomi visualisasi bertingkat: <strong>Treemap</strong> untuk proporsi area hierarkis berbasis luas poligon persegi; <strong>Choropleth</strong> dengan interpolasi warna berkesinambungan pada 519 batas wilayah kabupaten/kota; <strong>Simbol Proporsional</strong> dengan kompensasi persepsi Flannery <code>(R &prop; V<sup>0,57</sup>)</code>; <strong>Sunburst</strong> radial untuk hierarki konsentris; <strong>Sankey</strong> untuk konservasi aliran massa moneter; dan <strong>Arc Flow Lines</strong> untuk vektor arah maritim global.
+        </p>
+      </div>
+
+      <div class="methodology-card">
+        <h4>2. Aksesibilitas Ramah Buta Warna</h4>
+        <p>
+          Seluruh visualisasi geospasial dan diagram hierarki mematuhi standar <em>WCAG 2.1 AAA</em>. Tersedia palet <strong>Viridis</strong> yang terbukti secara matematis mempertahankan kontras luminans seragam bagi penglihatan normal, deutan, protan, maupun tritanopia, tanpa menimbulkan distorsi persepsi artefak visual.
+        </p>
+      </div>
+
+      <div class="methodology-card">
+        <h4>3. Arsitektur SPA Tanpa Ketergantungan Server</h4>
+        <p>
+          Dibangun 100% menggunakan HTML5, Vanilla CSS, dan JavaScript modular berorientasi objek yang membaca file JSON dan GeoJSON statis melalui <code>Fetch API</code>. Peta dunia dan batas wilayah disimpan secara lokal untuk menjamin keandalan deterministik dan waktu muat awal berkecepatan tinggi tanpa risiko kegagalan API pihak ketiga.
+        </p>
+      </div>
+    </div>
+
+    <!-- IEEE Reference Citations -->
+    <div class="ieee-references">
+      <h3 class="ieee-title">Referensi &amp; Sumber Data Resmi (Format IEEE)</h3>
+      <ol class="ieee-list">
+        <li>
+          Badan Pusat Statistik Republik Indonesia (BPS), “Produk Domestik Bruto Indonesia Menurut Lapangan Usaha 2020–2024,” <em>BPS RI Publication Series</em>, no. 3101001, Jakarta, 2024.
+        </li>
+        <li>
+          Kementerian Energi dan Sumber Daya Mineral (ESDM), “Laporan Kinerja Sektor Mineral dan Batubara serta Realisasi Hilirisasi Nasional,” Ditjen Minerba ESDM RI, Jakarta, 2024.
+        </li>
+        <li>
+          Kementerian Perdagangan Republik Indonesia, “Warta Ekspor: Neraca Perdagangan dan Dinamika Komoditas Logam Olahan Indonesia,” Ditjen PEN Kemendag, Jakarta, 2024.
+        </li>
+        <li>
+          S. Bateman, R. L. Mandryk, C. Gutwin, and A. Genest, “Useful junk? The effects of visual embellishment on comprehension and memorability of charts,” in <em>Proc. 28th Int. Conf. Human Factors in Computing Systems (CHI '10)</em>, Atlanta, GA, USA, 2010, pp. 2573–2582.
+        </li>
+        <li>
+          S. J. Flannery, “The relative effectiveness of television and the press in political campaigns,” <em>Cartographic Journal</em>, vol. 8, no. 2, pp. 96–109, 1971. [Flannery Circle Scaling Model].
+        </li>
+        <li>
+          J. J. Nuñez, C. R. Anderton, and R. S. Rensink, “Optimizing colormaps for perceptual uniformity and color-vision deficiency in geospatial visualization,” <em>IEEE Transactions on Visualization and Computer Graphics</em>, vol. 24, no. 1, pp. 648–658, Jan. 2018.
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <p>
+      &copy; 2026 <strong>Denyut Manufaktur dan Tambang</strong> &bull; Proyek Visualisasi Data &amp; Storytelling Akademik.<br>
+      Dikembangkan dengan standar rekayasa web modern (HTML5, Vanilla CSS, ECharts v5, Leaflet.js, Esri Basemap).
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- ECharts JS -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+
+  <!-- Modular Scrollytelling Scripts -->
+  <script src="./assets/js/chart_treemap.js?v=2"></script>
+  <script src="./assets/js/map_indonesia.js?v=9"></script>
+  <script src="./assets/js/chart_sunburst.js?v=9"></script>
+  <script src="./assets/js/chart_sankey.js?v=9"></script>
+  <script src="./assets/js/map_global.js?v=9"></script>
+  <script src="./assets/js/main.js?v=9"></script>
+</body>
+</html>

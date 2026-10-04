@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Denyut Manufaktur &amp; Tambang — Jurnalistik Data Visual BPS &amp; ESDM</title>
+  <meta name="description" content="Investigasi data visual komprehensif: Struktur PDB nasional, peta disparitas PDRB 514 kabupaten/kota, 74 pelabuhan ekspor, dan rantai pasok global tambang Indonesia.">
+  <meta name="theme-color" content="#FDFCF8">
+
+  <!-- Typography: Outfit (Primary) + Reenie Beanie (Whimsical Accent) + Geist Mono (Data Figures) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Reenie+Beanie&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <!-- Custom Softly Theme Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css?v=6.0">
+</head>
+<body>
+
+  <!-- GLOBAL GRAIN OVERLAY (Analog Tactile Paper Feel) -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- FLOATING AMBIENT BACKGROUND BLOBS -->
+  <div class="ambient-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- FLOATING PILL-SHAPED NAVIGATION BAR (Dynamic Bottom-to-Top Docking) -->
+  <div class="nav-wrapper at-bottom">
+    <header class="floating-navbar" role="banner">
+      <a href="#hero" class="nav-brand" aria-label="Beranda Investigasi">
+        <div class="brand-circle">
+          <div class="brand-dot"></div>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-title">Denyut Manufaktur &amp; Tambang</span>
+          <span class="brand-sub">Digital Data Story &middot; BPS &amp; ESDM</span>
+        </div>
+      </a>
+
+      <nav class="nav-links-scroll" aria-label="Navigasi bab visualisasi">
+        <a href="#bab1" class="nav-pill" data-chapter="1">
+          <span class="nav-pill-num">01.</span> Fondasi PDB
+        </a>
+        <a href="#bab2" class="nav-pill" data-chapter="2">
+          <span class="nav-pill-num">02.</span> Episentrum
+        </a>
+        <a href="#bab3" class="nav-pill" data-chapter="3">
+          <span class="nav-pill-num">03.</span> 74 Pelabuhan
+        </a>
+        <a href="#bab4" class="nav-pill" data-chapter="4">
+          <span class="nav-pill-num">04.</span> Pasar Global
+        </a>
+        <a href="#bab5" class="nav-pill" data-chapter="5">
+          <span class="nav-pill-num">05.</span> Rantai Pasok
+        </a>
+        <a href="#bab6" class="nav-pill" data-chapter="6">
+          <span class="nav-pill-num">06.</span> Arus Maritim
+        </a>
+      </nav>
+
+      <!-- Pill CTA Button to Interactive Dashboard -->
+      <a href="./dashboard.html" class="nav-pill nav-pill-cta" aria-label="Buka Dashboard Interaktif Eksploratif" target="_blank" rel="noopener noreferrer">
+        Dashboard Interaktif &nearr;
+      </a>
+    </header>
+    
+    <div class="nav-progress-bar" aria-hidden="true">
+      <div class="nav-progress-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- MAIN STORY CONTENT -->
+  <main id="main-content">
+    
+    <!-- HERO SECTION (Fits 100vh Single Screen) -->
+    <section class="hero-section" id="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title">
+          Denyut Manufaktur &amp; Tambang: Dari PDRB Daerah hingga <span class="cursive-emphasis">hilirisasi &amp; ekspor ~</span> Rantai Pasok Global
+        </h1>
+
+        <p class="hero-lead">
+          Bagaimana transformasi sektor ekstraktif dan industri pengolahan menggerakkan roda ekonomi nasional? 
+          Laporan investigasi visual ini membedah struktur Produk Domestik Bruto (PDB), menyingkap disparitas spasial di 514 kabupaten/kota, 
+          mengukur peranan 74 pelabuhan muat strategis, dan melacak koridor maritim ekspor Indonesia ke 84 negara mitra di 6 benua.
+        </p>
+
+        <!-- Dual Pill CTA Buttons -->
+        <div class="hero-actions">
+          <a href="#bab1" class="btn-pill-coral">Mulai Eksplorasi Cerita &darr;</a>
+          <a href="./dashboard.html" class="btn-pill-white" target="_blank" rel="noopener noreferrer">Dashboard Interaktif &nearr;</a>
+        </div>
+
+        <!-- HORIZONTAL 3-METRIC SCENARIO CARDS -->
+        <div class="scenario-strip">
+          <div class="scenario-card">
+            <div class="scenario-card-timestamp">
+              <span>BPS &middot; 2023</span>
+              <span class="handwritten-tag">makro ~</span>
+            </div>
+            <div class="scenario-card-value">Rp 20.892 T</div>
+            <div class="scenario-card-desc">Total PDB Indonesia menurut 17 lapangan usaha resmi BPS.</div>
+          </div>
+
+          <div class="scenario-card">
+            <div class="scenario-card-timestamp">
+              <span>Logistik Laut &middot; ESDM</span>
+              <span class="handwritten-tag">gerbang ~</span>
+            </div>
+            <div class="scenario-card-value">74 Pelabuhan</div>
+            <div class="scenario-card-desc">Simpul pengapalan mineral, energi, dan batu bara nusantara.</div>
+          </div>
+
+          <div class="scenario-card">
+            <div class="scenario-card-timestamp">
+              <span>Rantai Pasok &middot; 6 Benua</span>
+              <span class="handwritten-tag">global ~</span>
+            </div>
+            <div class="scenario-card-value">$49.7 Miliar</div>
+            <div class="scenario-card-desc">Nilai transaksi komoditas tambang ke 84 negara mitra dunia.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAB 1: TREEMAP STRUKTUR PDB - SCROLLYTELLING NARRATIVE -->
+    <section class="chapter-section" id="bab1" data-chapter="1">
+      <div class="chapter-container">
+        
+        <!-- Left Column: Story Steps (Scrolling) -->
+        <div class="narrative-col">
+          <div class="chapter-header">
+            <div class="chapter-badge-soft">
+              <span>Bab 01</span>
+              <span>&middot;</span>
+              <span>Fondasi PDB Nasional</span>
+            </div>
+            <h2 class="chapter-title">Anatomi 17 Sektor: Tulang Punggung Ekonomi Indonesia</h2>
+            <p class="chapter-desc">
+              Perekonomian nasional senilai Rp 20.892,4 Triliun bertumpu pada sinergi tiga pilar: 
+              ekstraksi sumber daya alam di <strong>Sektor Primer (23,0%)</strong>, 
+              pengolahan bernilai tambah di <strong>Sektor Sekunder (29,8%)</strong> yang dipimpin manufaktur, 
+              serta urat nadi distribusi dan perdagangan di <strong>Sektor Tersier (45,4%)</strong>. 
+              Struktur ini mencerminkan transformasi penting Indonesia dari sekadar eksportir bahan mentah menuju ekosistem industri terintegrasi.
+            </p>
+
+            <!-- 5-Second Scrollytelling Guide Toast -->
+            <div class="scrolly-hint-toast" id="treemap-hint-toast" role="status">
+              <span class="hint-icon">✨</span>
+              <span>Gulir narasi ke bawah — kanvas treemap di kanan beradaptasi otomatis mengikuti cerita.</span>
+              <button type="button" class="chip-soft chip-global active" data-region="all" onclick="MapGlobal.filterRoute('all')">Semua Benua</button>
+                    <button type="button" class="chip-soft chip-global" data-region="Asia" onclick="MapGlobal.filterRoute('Asia')">Asia</button>
+                    <button type="button" class="chip-soft chip-global" data-region="Eropa" onclick="MapGlobal.filterRoute('Eropa')">Eropa</button>
+                    <button type="button" class="chip-soft chip-global" data-region="Amerika" onclick="MapGlobal.filterRoute('Amerika')">Amerika</button>
+                    <button type="button" class="chip-soft chip-global" data-region="Afrika" onclick="MapGlobal.filterRoute('Afrika')">Afrika</button>
+                    <button type="button" class="chip-soft chip-global" data-region="Oseania" onclick="MapGlobal.filterRoute('Oseania')">Oseania</button>
+                </div>
+              </div>
+              <div id="map-global" class="chart-canvas" role="region" aria-label="Peta Aliran Rute Pelayaran Global"></div>
+              <div class="stage-footer">
+                <span>Animasi partikel denyut = Arus kapal kargo curah &amp; migas internasional</span>
+                <span class="handwritten-footer-note" id="global-footer-note">drag / zoom bola dunia ~</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONVERSION SECTION TO DASHBOARD -->
+    <section class="conversion-section">
+      <div class="conversion-card">
+        <div class="conversion-icon">
+          <div class="coral-dot"></div>
+        </div>
+        <h2 class="conversion-title">Eksplorasi Seluruh Visualisasi di Dashboard Interaktif</h2>
+        <p class="conversion-desc">
+          Buka ruang analisis data komprehensif: kendalikan filter, telusuri peta choropleth 514 daerah, bedah 74 pelabuhan muat, dan eksplorasi aliran perdagangan global secara bebas.
+        </p>
+        <div class="conversion-actions">
+          <a href="./dashboard.html" class="btn-pill-coral" target="_blank" rel="noopener noreferrer">Buka Dashboard Interaktif &nearr;</a>
+          <a href="#hero" class="btn-pill-white">Kembali ke Awal Cerita &uarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-title">
+          <div class="brand-circle" style="width:20px;height:20px;"><div class="brand-dot" style="width:6px;height:6px;"></div></div>
+          <span>Denyut Manufaktur &amp; Tambang</span>
+        </div>
+        <p class="footer-desc">
+          Platform investigasi data visual komparatif yang memadukan data statistik ekonomi makro BPS, catatan ekspor bea cukai, serta basis spasial kementerian ESDM untuk memberikan pemahaman holistik tentang peranan industri ekstraktif Indonesia.
+        </p>
+      </div>
+      <div>
+        <div class="footer-heading">Metodologi &amp; Sumber Data</div>
+        <ul class="footer-list">
+          <li><strong>PDB 2023:</strong> Publikasi Produk Domestik Bruto 17 Sektor (BPS)</li>
+          <li><strong>PDRB 514 Daerah:</strong> PDRB Atas Dasar Harga Berlaku (BPS)</li>
+          <li><strong>Data Ekspor Tambang:</strong> Statistik Ekspor Komoditas HS 25, 26, 27 (ESDM/Bea Cukai)</li>
+          <li><strong>Geospasial:</strong> Esri World Light Gray &amp; Peta Batas Wilayah BIG/BPS</li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Gaya &amp; Desain</div>
+        <ul class="footer-list">
+          <li><strong>Aesthetic:</strong> Softly Digital Minimalism &middot; Tactile Paper Grain</li>
+          <li><strong>Tipografi:</strong> Outfit &middot; Reenie Beanie &middot; Geist Mono</li>
+          <li><strong>Visualisasi:</strong> Apache ECharts 5.4 &middot; Leaflet.js 1.9</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT LIBRARIES -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- VISUALIZATION MODULES -->
+  <script src="./assets/js/chart_treemap.js"></script>
+  <script src="./assets/js/map_indonesia.js"></script>
+  <script src="./assets/js/map_port.js"></script>
+  <script src="./assets/js/chart_sunburst.js?v=5.3"></script>
+  <script src="./assets/js/chart_sankey.js?v=6.2"></script>
+  <script src="./assets/js/map_global.js?v=7.4"></script>
+
+  <!-- CONTROLLER -->
+  <script src="./assets/js/main.js?v=5.4"></script>
+
+</body>
+</html>

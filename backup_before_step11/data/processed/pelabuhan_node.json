@@ -1,0 +1,1713 @@
+{
+  "metadata": {
+    "title": "Pelabuhan Ekspor Tambang Indonesia",
+    "source": "ekspor_tambang.xlsx & koordinat_pelabuhan.xlsx",
+    "total_ports": 74,
+    "total_export_usd": 49686106957.04002,
+    "total_export_billion_usd": 49.69
+  },
+  "ports": [
+    {
+      "id": "BANJARMASIN",
+      "name": "BANJARMASIN",
+      "name_key": "BANJARMASIN",
+      "lat": -3.32,
+      "lng": 114.59,
+      "export_value_usd": 6450982699.870003,
+      "export_value_million_usd": 6450.98,
+      "export_value_billion_usd": 6.451,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($6,451.0 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "INDIA",
+        "JAPAN",
+        "MALAYSIA"
+      ],
+      "dominant_destination": "CHINA, INDIA, JAPAN",
+      "tx_count": 167,
+      "rank": 1,
+      "share_percent": 12.98
+    },
+    {
+      "id": "SAMARINDA",
+      "name": "SAMARINDA",
+      "name_key": "SAMARINDA",
+      "lat": -0.5,
+      "lng": 117.14,
+      "export_value_usd": 4171068529.07,
+      "export_value_million_usd": 4171.07,
+      "export_value_billion_usd": 4.171,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($4,171.1 M)"
+      ],
+      "top_destinations": [
+        "INDIA",
+        "CHINA",
+        "JAPAN",
+        "BANGLADESH"
+      ],
+      "dominant_destination": "INDIA, CHINA, JAPAN",
+      "tx_count": 151,
+      "rank": 2,
+      "share_percent": 8.39
+    },
+    {
+      "id": "AMAMAPARE",
+      "name": "AMAMAPARE",
+      "name_key": "AMAMAPARE",
+      "lat": -4.81,
+      "lng": 137.16,
+      "export_value_usd": 3621663613.7900004,
+      "export_value_million_usd": 3621.66,
+      "export_value_billion_usd": 3.622,
+      "primary_commodity": "[26] Ores slag and ash",
+      "top_commodities": [
+        "[26] Ores slag and ash ($3,621.7 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "JAPAN",
+        "KOREA REPUBLIC OF",
+        "INDIA"
+      ],
+      "dominant_destination": "CHINA, JAPAN, KOREA REPUBLIC OF",
+      "tx_count": 20,
+      "rank": 3,
+      "share_percent": 7.29
+    },
+    {
+      "id": "BINTUNI_IRIAN_JAYA",
+      "name": "BINTUNI IRIAN JAYA",
+      "name_key": "BINTUNI IRIAN JAYA",
+      "lat": -2.13,
+      "lng": 133.32,
+      "export_value_usd": 3254087502.079999,
+      "export_value_million_usd": 3254.09,
+      "export_value_billion_usd": 3.254,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($3,254.1 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "JAPAN",
+        "KOREA REPUBLIC OF",
+        "THAILAND"
+      ],
+      "dominant_destination": "CHINA, JAPAN, KOREA REPUBLIC OF",
+      "tx_count": 38,
+      "rank": 4,
+      "share_percent": 6.55
+    },
+    {
+      "id": "BALIKPAPAN",
+      "name": "BALIKPAPAN",
+      "name_key": "BALIKPAPAN",
+      "lat": -1.27,
+      "lng": 116.82,
+      "export_value_usd": 3164273867.229999,
+      "export_value_million_usd": 3164.27,
+      "export_value_billion_usd": 3.164,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($3,164.3 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "PHILIPPINES",
+        "MALAYSIA",
+        "SINGAPORE"
+      ],
+      "dominant_destination": "CHINA, PHILIPPINES, MALAYSIA",
+      "tx_count": 101,
+      "rank": 5,
+      "share_percent": 6.37
+    },
+    {
+      "id": "TANJUNG_BARA_KL",
+      "name": "TANJUNG BARA KL",
+      "name_key": "TANJUNG BARA KL",
+      "lat": 0.53,
+      "lng": 117.65,
+      "export_value_usd": 2715135326.69,
+      "export_value_million_usd": 2715.14,
+      "export_value_billion_usd": 2.715,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($2,715.1 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "INDIA",
+        "JAPAN",
+        "MALAYSIA"
+      ],
+      "dominant_destination": "CHINA, INDIA, JAPAN",
+      "tx_count": 128,
+      "rank": 6,
+      "share_percent": 5.46
+    },
+    {
+      "id": "MUSI_RIVER_BOOM_BARU",
+      "name": "MUSI RIVER/BOOM BARU",
+      "name_key": "MUSI RIVER/BOOM BARU",
+      "lat": -2.97,
+      "lng": 104.76,
+      "export_value_usd": 2428592725.97,
+      "export_value_million_usd": 2428.59,
+      "export_value_billion_usd": 2.429,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($2,428.6 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "INDIA",
+        "PHILIPPINES",
+        "KOREA REPUBLIC OF"
+      ],
+      "dominant_destination": "CHINA, INDIA, PHILIPPINES",
+      "tx_count": 123,
+      "rank": 7,
+      "share_percent": 4.89
+    },
+    {
+      "id": "SATUI",
+      "name": "SATUI",
+      "name_key": "SATUI",
+      "lat": -3.78,
+      "lng": 115.42,
+      "export_value_usd": 2411231059.290001,
+      "export_value_million_usd": 2411.23,
+      "export_value_billion_usd": 2.411,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($2,411.2 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "INDIA",
+        "JAPAN",
+        "KOREA REPUBLIC OF"
+      ],
+      "dominant_destination": "CHINA, INDIA, JAPAN",
+      "tx_count": 77,
+      "rank": 8,
+      "share_percent": 4.85
+    },
+    {
+      "id": "TANJUNG_REDEP",
+      "name": "TANJUNG REDEP",
+      "name_key": "TANJUNG REDEP",
+      "lat": 2.15,
+      "lng": 117.48,
+      "export_value_usd": 2219022902.2700005,
+      "export_value_million_usd": 2219.02,
+      "export_value_billion_usd": 2.219,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($2,219.0 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "VIET NAM",
+        "INDIA",
+        "TAIWAN"
+      ],
+      "dominant_destination": "CHINA, VIET NAM, INDIA",
+      "tx_count": 99,
+      "rank": 9,
+      "share_percent": 4.47
+    },
+    {
+      "id": "BONTHAN_BAY_SULAWESI",
+      "name": "BONTHAN BAY SULAWESI",
+      "name_key": "BONTHAN BAY SULAWESI",
+      "lat": -5.55,
+      "lng": 119.95,
+      "export_value_usd": 2006546931.8899999,
+      "export_value_million_usd": 2006.55,
+      "export_value_billion_usd": 2.007,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($2,006.5 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "JAPAN",
+        "KOREA REPUBLIC OF",
+        "TAIWAN"
+      ],
+      "dominant_destination": "CHINA, JAPAN, KOREA REPUBLIC OF",
+      "tx_count": 66,
+      "rank": 10,
+      "share_percent": 4.04
+    },
+    {
+      "id": "BAHUDOPI",
+      "name": "BAHUDOPI",
+      "name_key": "BAHUDOPI",
+      "lat": -2.82,
+      "lng": 122.14,
+      "export_value_usd": 1672249687.54,
+      "export_value_million_usd": 1672.25,
+      "export_value_billion_usd": 1.672,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($1,662.1 M)",
+        "[26] Ores slag and ash ($10.1 M)"
+      ],
+      "top_destinations": [
+        "INDIA",
+        "CHINA",
+        "BRAZIL",
+        "VIET NAM"
+      ],
+      "dominant_destination": "INDIA, CHINA, BRAZIL",
+      "tx_count": 156,
+      "rank": 11,
+      "share_percent": 3.37
+    },
+    {
+      "id": "TANJUNG_BALAI_KARIMUN",
+      "name": "TANJUNG BALAI KARIMUN",
+      "name_key": "TANJUNG BALAI KARIMUN",
+      "lat": 1.01,
+      "lng": 103.42,
+      "export_value_usd": 1437161999.0399997,
+      "export_value_million_usd": 1437.16,
+      "export_value_billion_usd": 1.437,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($1,437.2 M)"
+      ],
+      "top_destinations": [
+        "SINGAPORE",
+        "MALAYSIA",
+        "MARSHALL ISLANDS",
+        "CHINA"
+      ],
+      "dominant_destination": "SINGAPORE, MALAYSIA, MARSHALL ISLANDS",
+      "tx_count": 36,
+      "rank": 12,
+      "share_percent": 2.89
+    },
+    {
+      "id": "LUWUK",
+      "name": "LUWUK",
+      "name_key": "LUWUK",
+      "lat": -0.95,
+      "lng": 122.78,
+      "export_value_usd": 1154718014.46,
+      "export_value_million_usd": 1154.72,
+      "export_value_billion_usd": 1.155,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($1,154.7 M)"
+      ],
+      "top_destinations": [
+        "JAPAN",
+        "KOREA REPUBLIC OF",
+        "CHINA",
+        "THAILAND"
+      ],
+      "dominant_destination": "JAPAN, KOREA REPUBLIC OF, CHINA",
+      "tx_count": 23,
+      "rank": 13,
+      "share_percent": 2.32
+    },
+    {
+      "id": "KOTABARU",
+      "name": "KOTABARU",
+      "name_key": "KOTABARU",
+      "lat": -3.23,
+      "lng": 116.22,
+      "export_value_usd": 1114347137.5599995,
+      "export_value_million_usd": 1114.35,
+      "export_value_billion_usd": 1.114,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($1,114.3 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "JAPAN",
+        "INDIA",
+        "KOREA REPUBLIC OF"
+      ],
+      "dominant_destination": "CHINA, JAPAN, INDIA",
+      "tx_count": 65,
+      "rank": 14,
+      "share_percent": 2.24
+    },
+    {
+      "id": "ADANG_BAY",
+      "name": "ADANG BAY",
+      "name_key": "ADANG BAY",
+      "lat": -1.78,
+      "lng": 116.32,
+      "export_value_usd": 1013346312.3099997,
+      "export_value_million_usd": 1013.35,
+      "export_value_billion_usd": 1.013,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($1,013.3 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "INDIA",
+        "MALAYSIA",
+        "KOREA REPUBLIC OF"
+      ],
+      "dominant_destination": "CHINA, INDIA, MALAYSIA",
+      "tx_count": 83,
+      "rank": 15,
+      "share_percent": 2.04
+    },
+    {
+      "id": "TEREMPA",
+      "name": "TEREMPA",
+      "name_key": "TEREMPA",
+      "lat": 3.21,
+      "lng": 106.22,
+      "export_value_usd": 930033394.53,
+      "export_value_million_usd": 930.03,
+      "export_value_billion_usd": 0.93,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($930.0 M)"
+      ],
+      "top_destinations": [
+        "SINGAPORE"
+      ],
+      "dominant_destination": "SINGAPORE",
+      "tx_count": 12,
+      "rank": 16,
+      "share_percent": 1.87
+    },
+    {
+      "id": "KALIORANG",
+      "name": "KALIORANG",
+      "name_key": "KALIORANG",
+      "lat": 1.03,
+      "lng": 117.91,
+      "export_value_usd": 836679145.39,
+      "export_value_million_usd": 836.68,
+      "export_value_billion_usd": 0.837,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($836.7 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "INDIA",
+        "THAILAND",
+        "PHILIPPINES"
+      ],
+      "dominant_destination": "CHINA, INDIA, THAILAND",
+      "tx_count": 36,
+      "rank": 17,
+      "share_percent": 1.68
+    },
+    {
+      "id": "TARAHAN",
+      "name": "TARAHAN",
+      "name_key": "TARAHAN",
+      "lat": -5.51,
+      "lng": 105.34,
+      "export_value_usd": 743880430.5700002,
+      "export_value_million_usd": 743.88,
+      "export_value_billion_usd": 0.744,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($743.9 M)"
+      ],
+      "top_destinations": [
+        "BANGLADESH",
+        "INDIA",
+        "CAMBODIA",
+        "VIET NAM"
+      ],
+      "dominant_destination": "BANGLADESH, INDIA, CAMBODIA",
+      "tx_count": 75,
+      "rank": 18,
+      "share_percent": 1.5
+    },
+    {
+      "id": "BELAKANG_PADANG",
+      "name": "BELAKANG PADANG",
+      "name_key": "BELAKANG PADANG",
+      "lat": 1.15,
+      "lng": 103.88,
+      "export_value_usd": 701973045.98,
+      "export_value_million_usd": 701.97,
+      "export_value_billion_usd": 0.702,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($702.0 M)"
+      ],
+      "top_destinations": [
+        "SINGAPORE"
+      ],
+      "dominant_destination": "SINGAPORE",
+      "tx_count": 12,
+      "rank": 19,
+      "share_percent": 1.41
+    },
+    {
+      "id": "LINGKAS_TARAKAN",
+      "name": "LINGKAS TARAKAN",
+      "name_key": "LINGKAS TARAKAN",
+      "lat": 3.29,
+      "lng": 117.59,
+      "export_value_usd": 687664017.1999999,
+      "export_value_million_usd": 687.66,
+      "export_value_billion_usd": 0.688,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($687.7 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "KOREA REPUBLIC OF",
+        "MALAYSIA",
+        "INDIA"
+      ],
+      "dominant_destination": "CHINA, KOREA REPUBLIC OF, MALAYSIA",
+      "tx_count": 53,
+      "rank": 20,
+      "share_percent": 1.38
+    },
+    {
+      "id": "DUMAI",
+      "name": "DUMAI",
+      "name_key": "DUMAI",
+      "lat": 1.68,
+      "lng": 101.44,
+      "export_value_usd": 601917579.48,
+      "export_value_million_usd": 601.92,
+      "export_value_billion_usd": 0.602,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($601.9 M)"
+      ],
+      "top_destinations": [
+        "THAILAND",
+        "NETHERLANDS",
+        "MALAYSIA",
+        "KOREA REPUBLIC OF"
+      ],
+      "dominant_destination": "THAILAND, NETHERLANDS, MALAYSIA",
+      "tx_count": 47,
+      "rank": 21,
+      "share_percent": 1.21
+    },
+    {
+      "id": "AMAMAPARE_IJ",
+      "name": "AMAMAPARE IJ",
+      "name_key": "AMAMAPARE IJ",
+      "lat": -4.81,
+      "lng": 137.16,
+      "export_value_usd": 579031542.69,
+      "export_value_million_usd": 579.03,
+      "export_value_billion_usd": 0.579,
+      "primary_commodity": "[26] Ores slag and ash",
+      "top_commodities": [
+        "[26] Ores slag and ash ($579.0 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "INDIA",
+        "JAPAN",
+        "KOREA REPUBLIC OF"
+      ],
+      "dominant_destination": "CHINA, INDIA, JAPAN",
+      "tx_count": 4,
+      "rank": 22,
+      "share_percent": 1.17
+    },
+    {
+      "id": "NORTH_PULAU_LAUT",
+      "name": "NORTH PULAU LAUT",
+      "name_key": "NORTH PULAU LAUT",
+      "lat": -3.19,
+      "lng": 116.27,
+      "export_value_usd": 532187265.03999996,
+      "export_value_million_usd": 532.19,
+      "export_value_billion_usd": 0.532,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($532.2 M)"
+      ],
+      "top_destinations": [
+        "JAPAN",
+        "KOREA REPUBLIC OF",
+        "PHILIPPINES",
+        "TAIWAN"
+      ],
+      "dominant_destination": "JAPAN, KOREA REPUBLIC OF, PHILIPPINES",
+      "tx_count": 38,
+      "rank": 23,
+      "share_percent": 1.07
+    },
+    {
+      "id": "BENETE",
+      "name": "BENETE",
+      "name_key": "BENETE",
+      "lat": -8.89,
+      "lng": 116.73,
+      "export_value_usd": 515518738.15,
+      "export_value_million_usd": 515.52,
+      "export_value_billion_usd": 0.516,
+      "primary_commodity": "[26] Ores slag and ash",
+      "top_commodities": [
+        "[26] Ores slag and ash ($515.5 M)"
+      ],
+      "top_destinations": [
+        "KOREA REPUBLIC OF",
+        "CHINA",
+        "JAPAN",
+        "INDIA"
+      ],
+      "dominant_destination": "KOREA REPUBLIC OF, CHINA, JAPAN",
+      "tx_count": 6,
+      "rank": 24,
+      "share_percent": 1.04
+    },
+    {
+      "id": "SUNGAI_PAKNING",
+      "name": "SUNGAI PAKNING",
+      "name_key": "SUNGAI PAKNING",
+      "lat": 1.34,
+      "lng": 102.15,
+      "export_value_usd": 492716232.26,
+      "export_value_million_usd": 492.72,
+      "export_value_billion_usd": 0.493,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($492.7 M)"
+      ],
+      "top_destinations": [
+        "SINGAPORE",
+        "MALAYSIA"
+      ],
+      "dominant_destination": "SINGAPORE, MALAYSIA",
+      "tx_count": 21,
+      "rank": 25,
+      "share_percent": 0.99
+    },
+    {
+      "id": "MEULABOH",
+      "name": "MEULABOH",
+      "name_key": "MEULABOH",
+      "lat": 4.14,
+      "lng": 96.12,
+      "export_value_usd": 424214662.61999995,
+      "export_value_million_usd": 424.21,
+      "export_value_billion_usd": 0.424,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($424.2 M)"
+      ],
+      "top_destinations": [
+        "INDIA",
+        "THAILAND",
+        "VIET NAM"
+      ],
+      "dominant_destination": "INDIA, THAILAND, VIET NAM",
+      "tx_count": 20,
+      "rank": 26,
+      "share_percent": 0.85
+    },
+    {
+      "id": "SANGKULIRANG",
+      "name": "SANGKULIRANG",
+      "name_key": "SANGKULIRANG",
+      "lat": 0.99,
+      "lng": 117.97,
+      "export_value_usd": 417104666.55,
+      "export_value_million_usd": 417.1,
+      "export_value_billion_usd": 0.417,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($417.1 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "INDIA",
+        "THAILAND",
+        "PAKISTAN"
+      ],
+      "dominant_destination": "CHINA, INDIA, THAILAND",
+      "tx_count": 40,
+      "rank": 27,
+      "share_percent": 0.84
+    },
+    {
+      "id": "SUNGAI_GERONG",
+      "name": "SUNGAI GERONG",
+      "name_key": "SUNGAI GERONG",
+      "lat": -2.99,
+      "lng": 104.83,
+      "export_value_usd": 383053109.6500001,
+      "export_value_million_usd": 383.05,
+      "export_value_billion_usd": 0.383,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($383.1 M)"
+      ],
+      "top_destinations": [
+        "MALAYSIA",
+        "SINGAPORE"
+      ],
+      "dominant_destination": "MALAYSIA, SINGAPORE",
+      "tx_count": 22,
+      "rank": 28,
+      "share_percent": 0.77
+    },
+    {
+      "id": "ASAM_ASAM",
+      "name": "ASAM ASAM",
+      "name_key": "ASAM ASAM",
+      "lat": -3.9,
+      "lng": 115.11,
+      "export_value_usd": 304505139.8,
+      "export_value_million_usd": 304.51,
+      "export_value_billion_usd": 0.305,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($304.5 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "PHILIPPINES",
+        "INDIA",
+        "TAIWAN"
+      ],
+      "dominant_destination": "CHINA, PHILIPPINES, INDIA",
+      "tx_count": 37,
+      "rank": 29,
+      "share_percent": 0.61
+    },
+    {
+      "id": "BALONGAN",
+      "name": "BALONGAN",
+      "name_key": "BALONGAN",
+      "lat": -6.36,
+      "lng": 108.38,
+      "export_value_usd": 230878777.91,
+      "export_value_million_usd": 230.88,
+      "export_value_billion_usd": 0.231,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($230.9 M)"
+      ],
+      "top_destinations": [
+        "MALAYSIA",
+        "SINGAPORE"
+      ],
+      "dominant_destination": "MALAYSIA, SINGAPORE",
+      "tx_count": 15,
+      "rank": 30,
+      "share_percent": 0.46
+    },
+    {
+      "id": "TUBAN",
+      "name": "TUBAN",
+      "name_key": "TUBAN",
+      "lat": -6.89,
+      "lng": 112.06,
+      "export_value_usd": 219879920.84,
+      "export_value_million_usd": 219.88,
+      "export_value_billion_usd": 0.22,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($219.9 M)"
+      ],
+      "top_destinations": [
+        "THAILAND"
+      ],
+      "dominant_destination": "THAILAND",
+      "tx_count": 5,
+      "rank": 31,
+      "share_percent": 0.44
+    },
+    {
+      "id": "TANJUNG_PRIOK",
+      "name": "TANJUNG PRIOK",
+      "name_key": "TANJUNG PRIOK",
+      "lat": -6.1,
+      "lng": 106.87,
+      "export_value_usd": 212142358.65000007,
+      "export_value_million_usd": 212.14,
+      "export_value_billion_usd": 0.212,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($129.5 M)",
+        "[26] Ores slag and ash ($82.6 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "AUSTRALIA",
+        "INDIA",
+        "MALAYSIA"
+      ],
+      "dominant_destination": "CHINA, AUSTRALIA, INDIA",
+      "tx_count": 403,
+      "rank": 32,
+      "share_percent": 0.43
+    },
+    {
+      "id": "CILACAP",
+      "name": "CILACAP",
+      "name_key": "CILACAP",
+      "lat": -7.74,
+      "lng": 109.0,
+      "export_value_usd": 190299035.04999998,
+      "export_value_million_usd": 190.3,
+      "export_value_billion_usd": 0.19,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($190.3 M)"
+      ],
+      "top_destinations": [
+        "SINGAPORE",
+        "MALAYSIA"
+      ],
+      "dominant_destination": "SINGAPORE, MALAYSIA",
+      "tx_count": 12,
+      "rank": 33,
+      "share_percent": 0.38
+    },
+    {
+      "id": "TANJUNG_LENENG",
+      "name": "TANJUNG LENENG",
+      "name_key": "TANJUNG LENENG",
+      "lat": -8.67,
+      "lng": 116.34,
+      "export_value_usd": 190039664.84999996,
+      "export_value_million_usd": 190.04,
+      "export_value_billion_usd": 0.19,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($190.0 M)"
+      ],
+      "top_destinations": [
+        "SINGAPORE",
+        "MALAYSIA",
+        "KOREA REPUBLIC OF",
+        "CHINA"
+      ],
+      "dominant_destination": "SINGAPORE, MALAYSIA, KOREA REPUBLIC OF",
+      "tx_count": 21,
+      "rank": 34,
+      "share_percent": 0.38
+    },
+    {
+      "id": "GRESIK",
+      "name": "GRESIK",
+      "name_key": "GRESIK",
+      "lat": -7.16,
+      "lng": 112.65,
+      "export_value_usd": 180887835.11,
+      "export_value_million_usd": 180.89,
+      "export_value_billion_usd": 0.181,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($180.9 M)"
+      ],
+      "top_destinations": [
+        "THAILAND",
+        "SINGAPORE",
+        "MALAYSIA"
+      ],
+      "dominant_destination": "THAILAND, SINGAPORE, MALAYSIA",
+      "tx_count": 22,
+      "rank": 35,
+      "share_percent": 0.36
+    },
+    {
+      "id": "MUARA_SABAK",
+      "name": "Muara Sabak",
+      "name_key": "MUARA SABAK",
+      "lat": -1.13,
+      "lng": 103.82,
+      "export_value_usd": 175391431.06000003,
+      "export_value_million_usd": 175.39,
+      "export_value_billion_usd": 0.175,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($175.4 M)"
+      ],
+      "top_destinations": [
+        "THAILAND",
+        "CHINA"
+      ],
+      "dominant_destination": "THAILAND, CHINA",
+      "tx_count": 13,
+      "rank": 36,
+      "share_percent": 0.35
+    },
+    {
+      "id": "TUBAN_JV",
+      "name": "TUBAN JV",
+      "name_key": "TUBAN JV",
+      "lat": -6.89,
+      "lng": 112.06,
+      "export_value_usd": 152470837.44,
+      "export_value_million_usd": 152.47,
+      "export_value_billion_usd": 0.152,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($152.5 M)"
+      ],
+      "top_destinations": [
+        "THAILAND"
+      ],
+      "dominant_destination": "THAILAND",
+      "tx_count": 4,
+      "rank": 37,
+      "share_percent": 0.31
+    },
+    {
+      "id": "LALANG_TERMINAL_ST",
+      "name": "LALANG TERMINAL ST",
+      "name_key": "LALANG TERMINAL ST",
+      "lat": 1.15,
+      "lng": 102.32,
+      "export_value_usd": 110491113.21999998,
+      "export_value_million_usd": 110.49,
+      "export_value_billion_usd": 0.11,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($110.5 M)"
+      ],
+      "top_destinations": [
+        "THAILAND"
+      ],
+      "dominant_destination": "THAILAND",
+      "tx_count": 10,
+      "rank": 38,
+      "share_percent": 0.22
+    },
+    {
+      "id": "MERAK",
+      "name": "MERAK",
+      "name_key": "MERAK",
+      "lat": -5.93,
+      "lng": 105.99,
+      "export_value_usd": 102324499.32999998,
+      "export_value_million_usd": 102.32,
+      "export_value_billion_usd": 0.102,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($102.3 M)"
+      ],
+      "top_destinations": [
+        "MALAYSIA",
+        "SINGAPORE",
+        "CHINA",
+        "KOREA REPUBLIC OF"
+      ],
+      "dominant_destination": "MALAYSIA, SINGAPORE, CHINA",
+      "tx_count": 28,
+      "rank": 39,
+      "share_percent": 0.21
+    },
+    {
+      "id": "TANJUNG_SELOR",
+      "name": "TANJUNG SELOR",
+      "name_key": "TANJUNG SELOR",
+      "lat": 2.83,
+      "lng": 117.36,
+      "export_value_usd": 97121508.74,
+      "export_value_million_usd": 97.12,
+      "export_value_billion_usd": 0.097,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($97.1 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "THAILAND",
+        "VIET NAM"
+      ],
+      "dominant_destination": "CHINA, THAILAND, VIET NAM",
+      "tx_count": 28,
+      "rank": 40,
+      "share_percent": 0.2
+    },
+    {
+      "id": "PULAU_BAAI",
+      "name": "PULAU BAAI",
+      "name_key": "PULAU BAAI",
+      "lat": -3.9,
+      "lng": 102.29,
+      "export_value_usd": 94515413.98,
+      "export_value_million_usd": 94.52,
+      "export_value_billion_usd": 0.095,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($94.5 M)"
+      ],
+      "top_destinations": [
+        "INDIA",
+        "PHILIPPINES",
+        "THAILAND",
+        "VIET NAM"
+      ],
+      "dominant_destination": "INDIA, PHILIPPINES, THAILAND",
+      "tx_count": 27,
+      "rank": 41,
+      "share_percent": 0.19
+    },
+    {
+      "id": "BELIDA_TERMINAL",
+      "name": "BELIDA TERMINAL",
+      "name_key": "BELIDA TERMINAL",
+      "lat": 4.14,
+      "lng": 107.56,
+      "export_value_usd": 94452375.86999999,
+      "export_value_million_usd": 94.45,
+      "export_value_billion_usd": 0.094,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($94.5 M)"
+      ],
+      "top_destinations": [
+        "THAILAND",
+        "SINGAPORE"
+      ],
+      "dominant_destination": "THAILAND, SINGAPORE",
+      "tx_count": 8,
+      "rank": 42,
+      "share_percent": 0.19
+    },
+    {
+      "id": "BUNYU",
+      "name": "BUNYU",
+      "name_key": "BUNYU",
+      "lat": 3.51,
+      "lng": 117.85,
+      "export_value_usd": 83490275.53000002,
+      "export_value_million_usd": 83.49,
+      "export_value_billion_usd": 0.083,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($83.5 M)"
+      ],
+      "top_destinations": [
+        "INDIA",
+        "THAILAND",
+        "CHINA",
+        "VIET NAM"
+      ],
+      "dominant_destination": "INDIA, THAILAND, CHINA",
+      "tx_count": 27,
+      "rank": 43,
+      "share_percent": 0.17
+    },
+    {
+      "id": "TANJUNG_SANGATA",
+      "name": "TANJUNG SANGATA",
+      "name_key": "TANJUNG SANGATA",
+      "lat": 0.44,
+      "lng": 117.55,
+      "export_value_usd": 79073960.52,
+      "export_value_million_usd": 79.07,
+      "export_value_billion_usd": 0.079,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($79.1 M)"
+      ],
+      "top_destinations": [
+        "INDIA",
+        "CHINA",
+        "BANGLADESH",
+        "VIET NAM"
+      ],
+      "dominant_destination": "INDIA, CHINA, BANGLADESH",
+      "tx_count": 16,
+      "rank": 44,
+      "share_percent": 0.16
+    },
+    {
+      "id": "UDANG_NATUNA",
+      "name": "UDANG NATUNA",
+      "name_key": "UDANG NATUNA",
+      "lat": 4.95,
+      "lng": 106.31,
+      "export_value_usd": 73212575.06,
+      "export_value_million_usd": 73.21,
+      "export_value_billion_usd": 0.073,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($73.2 M)"
+      ],
+      "top_destinations": [
+        "THAILAND",
+        "SINGAPORE"
+      ],
+      "dominant_destination": "THAILAND, SINGAPORE",
+      "tx_count": 6,
+      "rank": 45,
+      "share_percent": 0.15
+    },
+    {
+      "id": "BANTA_ENG",
+      "name": "BANTA ENG",
+      "name_key": "BANTA ENG",
+      "lat": -5.54,
+      "lng": 119.94,
+      "export_value_usd": 66960640.03,
+      "export_value_million_usd": 66.96,
+      "export_value_billion_usd": 0.067,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($67.0 M)"
+      ],
+      "top_destinations": [
+        "THAILAND",
+        "SINGAPORE",
+        "MALAYSIA"
+      ],
+      "dominant_destination": "THAILAND, SINGAPORE, MALAYSIA",
+      "tx_count": 6,
+      "rank": 46,
+      "share_percent": 0.13
+    },
+    {
+      "id": "TANJUNG_PERAK",
+      "name": "TANJUNG PERAK",
+      "name_key": "TANJUNG PERAK",
+      "lat": -7.19,
+      "lng": 112.73,
+      "export_value_usd": 60987629.79000001,
+      "export_value_million_usd": 60.99,
+      "export_value_billion_usd": 0.061,
+      "primary_commodity": "[26] Ores slag and ash",
+      "top_commodities": [
+        "[26] Ores slag and ash ($42.3 M)",
+        "[27] Mineral fuels ($18.7 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "INDIA",
+        "JAPAN",
+        "UNITED ARAB EMIRATES"
+      ],
+      "dominant_destination": "CHINA, INDIA, JAPAN",
+      "tx_count": 158,
+      "rank": 47,
+      "share_percent": 0.12
+    },
+    {
+      "id": "KALIANGET",
+      "name": "KALIANGET",
+      "name_key": "KALIANGET",
+      "lat": -7.05,
+      "lng": 113.98,
+      "export_value_usd": 56829188.29000001,
+      "export_value_million_usd": 56.83,
+      "export_value_billion_usd": 0.057,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($56.8 M)"
+      ],
+      "top_destinations": [
+        "THAILAND",
+        "AUSTRALIA"
+      ],
+      "dominant_destination": "THAILAND, AUSTRALIA",
+      "tx_count": 5,
+      "rank": 48,
+      "share_percent": 0.11
+    },
+    {
+      "id": "NUNUKAN",
+      "name": "NUNUKAN",
+      "name_key": "NUNUKAN",
+      "lat": 4.13,
+      "lng": 117.65,
+      "export_value_usd": 54821814.28,
+      "export_value_million_usd": 54.82,
+      "export_value_billion_usd": 0.055,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($54.8 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "JAPAN",
+        "VIET NAM",
+        "BANGLADESH"
+      ],
+      "dominant_destination": "CHINA, JAPAN, VIET NAM",
+      "tx_count": 15,
+      "rank": 49,
+      "share_percent": 0.11
+    },
+    {
+      "id": "PULANG_PISAU",
+      "name": "PULANG PISAU",
+      "name_key": "PULANG PISAU",
+      "lat": -2.76,
+      "lng": 114.26,
+      "export_value_usd": 54256928.23,
+      "export_value_million_usd": 54.26,
+      "export_value_billion_usd": 0.054,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($54.3 M)"
+      ],
+      "top_destinations": [
+        "MALAYSIA",
+        "CAMBODIA",
+        "VIET NAM",
+        "THAILAND"
+      ],
+      "dominant_destination": "MALAYSIA, CAMBODIA, VIET NAM",
+      "tx_count": 44,
+      "rank": 50,
+      "share_percent": 0.11
+    },
+    {
+      "id": "MUNTOK",
+      "name": "MUNTOK",
+      "name_key": "MUNTOK",
+      "lat": -2.06,
+      "lng": 105.16,
+      "export_value_usd": 20624077.05,
+      "export_value_million_usd": 20.62,
+      "export_value_billion_usd": 0.021,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($20.6 M)"
+      ],
+      "top_destinations": [
+        "THAILAND"
+      ],
+      "dominant_destination": "THAILAND",
+      "tx_count": 3,
+      "rank": 51,
+      "share_percent": 0.04
+    },
+    {
+      "id": "JAMBI",
+      "name": "JAMBI",
+      "name_key": "JAMBI",
+      "lat": -1.59,
+      "lng": 103.61,
+      "export_value_usd": 18922478.330000002,
+      "export_value_million_usd": 18.92,
+      "export_value_billion_usd": 0.019,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($18.9 M)"
+      ],
+      "top_destinations": [
+        "VIET NAM",
+        "CAMBODIA",
+        "MALAYSIA",
+        "THAILAND"
+      ],
+      "dominant_destination": "VIET NAM, CAMBODIA, MALAYSIA",
+      "tx_count": 20,
+      "rank": 52,
+      "share_percent": 0.04
+    },
+    {
+      "id": "SAMPIT",
+      "name": "SAMPIT",
+      "name_key": "SAMPIT",
+      "lat": -2.53,
+      "lng": 112.95,
+      "export_value_usd": 18012405.5,
+      "export_value_million_usd": 18.01,
+      "export_value_billion_usd": 0.018,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($18.0 M)"
+      ],
+      "top_destinations": [
+        "INDIA",
+        "CHINA"
+      ],
+      "dominant_destination": "INDIA, CHINA",
+      "tx_count": 9,
+      "rank": 53,
+      "share_percent": 0.04
+    },
+    {
+      "id": "BLANG_LANCANG_(ARUN)",
+      "name": "BLANG LANCANG (ARUN)",
+      "name_key": "BLANG LANCANG (ARUN)",
+      "lat": 5.21,
+      "lng": 97.1,
+      "export_value_usd": 17248114.0,
+      "export_value_million_usd": 17.25,
+      "export_value_billion_usd": 0.017,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($17.2 M)"
+      ],
+      "top_destinations": [
+        "THAILAND"
+      ],
+      "dominant_destination": "THAILAND",
+      "tx_count": 3,
+      "rank": 54,
+      "share_percent": 0.03
+    },
+    {
+      "id": "PONTIANAK",
+      "name": "PONTIANAK",
+      "name_key": "PONTIANAK",
+      "lat": -0.02,
+      "lng": 109.33,
+      "export_value_usd": 10879274.079999998,
+      "export_value_million_usd": 10.88,
+      "export_value_billion_usd": 0.011,
+      "primary_commodity": "[26] Ores slag and ash",
+      "top_commodities": [
+        "[26] Ores slag and ash ($10.9 M)"
+      ],
+      "top_destinations": [
+        "CHINA",
+        "INDIA",
+        "VIET NAM",
+        "MALAYSIA"
+      ],
+      "dominant_destination": "CHINA, INDIA, VIET NAM",
+      "tx_count": 27,
+      "rank": 55,
+      "share_percent": 0.02
+    },
+    {
+      "id": "BULA",
+      "name": "BULA",
+      "name_key": "BULA",
+      "lat": -3.11,
+      "lng": 130.49,
+      "export_value_usd": 9755267.79,
+      "export_value_million_usd": 9.76,
+      "export_value_billion_usd": 0.01,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($9.8 M)"
+      ],
+      "top_destinations": [
+        "CHINA"
+      ],
+      "dominant_destination": "CHINA",
+      "tx_count": 1,
+      "rank": 56,
+      "share_percent": 0.02
+    },
+    {
+      "id": "KUALA_TUNGKAL",
+      "name": "KUALA TUNGKAL",
+      "name_key": "KUALA TUNGKAL",
+      "lat": -0.81,
+      "lng": 103.46,
+      "export_value_usd": 7449478.830000001,
+      "export_value_million_usd": 7.45,
+      "export_value_billion_usd": 0.007,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($7.4 M)"
+      ],
+      "top_destinations": [
+        "MALAYSIA",
+        "CAMBODIA",
+        "VIET NAM"
+      ],
+      "dominant_destination": "MALAYSIA, CAMBODIA, VIET NAM",
+      "tx_count": 13,
+      "rank": 57,
+      "share_percent": 0.01
+    },
+    {
+      "id": "SOEKARNO-HATTA_(U)",
+      "name": "SOEKARNO-HATTA (U)",
+      "name_key": "SOEKARNO-HATTA (U)",
+      "lat": -6.12,
+      "lng": 106.65,
+      "export_value_usd": 4883248.960000002,
+      "export_value_million_usd": 4.88,
+      "export_value_billion_usd": 0.005,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($4.9 M)",
+        "[26] Ores slag and ash ($0.0 M)"
+      ],
+      "top_destinations": [
+        "UNITED ARAB EMIRATES",
+        "MALAYSIA",
+        "AUSTRALIA",
+        "THAILAND"
+      ],
+      "dominant_destination": "UNITED ARAB EMIRATES, MALAYSIA, AUSTRALIA",
+      "tx_count": 161,
+      "rank": 58,
+      "share_percent": 0.01
+    },
+    {
+      "id": "CIWANDAN",
+      "name": "CIWANDAN",
+      "name_key": "CIWANDAN",
+      "lat": -6.01,
+      "lng": 105.95,
+      "export_value_usd": 3907026.68,
+      "export_value_million_usd": 3.91,
+      "export_value_billion_usd": 0.004,
+      "primary_commodity": "[26] Ores slag and ash",
+      "top_commodities": [
+        "[26] Ores slag and ash ($3.9 M)"
+      ],
+      "top_destinations": [
+        "JAPAN",
+        "VIET NAM"
+      ],
+      "dominant_destination": "JAPAN, VIET NAM",
+      "tx_count": 4,
+      "rank": 59,
+      "share_percent": 0.01
+    },
+    {
+      "id": "ATAPUPU",
+      "name": "ATAPUPU",
+      "name_key": "ATAPUPU",
+      "lat": -8.98,
+      "lng": 124.86,
+      "export_value_usd": 2519760.2699999996,
+      "export_value_million_usd": 2.52,
+      "export_value_billion_usd": 0.003,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($2.5 M)"
+      ],
+      "top_destinations": [
+        "EAST TIMOR"
+      ],
+      "dominant_destination": "EAST TIMOR",
+      "tx_count": 12,
+      "rank": 60,
+      "share_percent": 0.01
+    },
+    {
+      "id": "BAU-BAU",
+      "name": "BAU-BAU",
+      "name_key": "BAU-BAU",
+      "lat": -5.46,
+      "lng": 122.61,
+      "export_value_usd": 1633221.0,
+      "export_value_million_usd": 1.63,
+      "export_value_billion_usd": 0.002,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($1.6 M)"
+      ],
+      "top_destinations": [
+        "CHINA"
+      ],
+      "dominant_destination": "CHINA",
+      "tx_count": 3,
+      "rank": 61,
+      "share_percent": 0.0
+    },
+    {
+      "id": "BELAWAN",
+      "name": "BELAWAN",
+      "name_key": "BELAWAN",
+      "lat": 3.78,
+      "lng": 98.68,
+      "export_value_usd": 1166289.0400000003,
+      "export_value_million_usd": 1.17,
+      "export_value_billion_usd": 0.001,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($0.9 M)",
+        "[26] Ores slag and ash ($0.3 M)"
+      ],
+      "top_destinations": [
+        "MALAYSIA",
+        "VIET NAM",
+        "TAIWAN",
+        "LIBYAN ARAB JAMAHIRIYA"
+      ],
+      "dominant_destination": "MALAYSIA, VIET NAM, TAIWAN",
+      "tx_count": 44,
+      "rank": 62,
+      "share_percent": 0.0
+    },
+    {
+      "id": "TANJUNG_EMAS",
+      "name": "TANJUNG EMAS",
+      "name_key": "TANJUNG EMAS",
+      "lat": -6.94,
+      "lng": 110.42,
+      "export_value_usd": 963346.8300000001,
+      "export_value_million_usd": 0.96,
+      "export_value_billion_usd": 0.001,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($1.0 M)"
+      ],
+      "top_destinations": [
+        "MALDIVES",
+        "SINGAPORE",
+        "THAILAND"
+      ],
+      "dominant_destination": "MALDIVES, SINGAPORE, THAILAND",
+      "tx_count": 8,
+      "rank": 63,
+      "share_percent": 0.0
+    },
+    {
+      "id": "PALEMBANG-KERTAPATI",
+      "name": "PALEMBANG-KERTAPATI",
+      "name_key": "PALEMBANG-KERTAPATI",
+      "lat": -3.02,
+      "lng": 104.75,
+      "export_value_usd": 886823.32,
+      "export_value_million_usd": 0.89,
+      "export_value_billion_usd": 0.001,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($0.9 M)"
+      ],
+      "top_destinations": [
+        "MALAYSIA"
+      ],
+      "dominant_destination": "MALAYSIA",
+      "tx_count": 1,
+      "rank": 64,
+      "share_percent": 0.0
+    },
+    {
+      "id": "BATU_AMPAR",
+      "name": "BATU AMPAR",
+      "name_key": "BATU AMPAR",
+      "lat": 1.16,
+      "lng": 104.01,
+      "export_value_usd": 775772.9500000001,
+      "export_value_million_usd": 0.78,
+      "export_value_billion_usd": 0.001,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($0.8 M)"
+      ],
+      "top_destinations": [
+        "MALAYSIA",
+        "SINGAPORE",
+        "VIET NAM",
+        "AUSTRALIA"
+      ],
+      "dominant_destination": "MALAYSIA, SINGAPORE, VIET NAM",
+      "tx_count": 29,
+      "rank": 65,
+      "share_percent": 0.0
+    },
+    {
+      "id": "KENDARI",
+      "name": "KENDARI",
+      "name_key": "KENDARI",
+      "lat": -3.97,
+      "lng": 122.59,
+      "export_value_usd": 675000.0,
+      "export_value_million_usd": 0.68,
+      "export_value_billion_usd": 0.001,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($0.7 M)"
+      ],
+      "top_destinations": [
+        "CHINA"
+      ],
+      "dominant_destination": "CHINA",
+      "tx_count": 1,
+      "rank": 66,
+      "share_percent": 0.0
+    },
+    {
+      "id": "ATAMBUA_(U)",
+      "name": "ATAMBUA (U)",
+      "name_key": "ATAMBUA (U)",
+      "lat": -9.1,
+      "lng": 124.89,
+      "export_value_usd": 182470.4,
+      "export_value_million_usd": 0.18,
+      "export_value_billion_usd": 0.0,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($0.2 M)"
+      ],
+      "top_destinations": [
+        "EAST TIMOR"
+      ],
+      "dominant_destination": "EAST TIMOR",
+      "tx_count": 4,
+      "rank": 67,
+      "share_percent": 0.0
+    },
+    {
+      "id": "NGURAH_RAI_(U)",
+      "name": "NGURAH RAI (U)",
+      "name_key": "NGURAH RAI (U)",
+      "lat": -8.74,
+      "lng": 115.16,
+      "export_value_usd": 85037.51999999999,
+      "export_value_million_usd": 0.09,
+      "export_value_billion_usd": 0.0,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($0.1 M)"
+      ],
+      "top_destinations": [
+        "THAILAND",
+        "MALAYSIA",
+        "IRELAND",
+        "CHINA"
+      ],
+      "dominant_destination": "THAILAND, MALAYSIA, IRELAND",
+      "tx_count": 24,
+      "rank": 68,
+      "share_percent": 0.0
+    },
+    {
+      "id": "JAYAPURA",
+      "name": "JAYAPURA",
+      "name_key": "JAYAPURA",
+      "lat": -2.53,
+      "lng": 140.71,
+      "export_value_usd": 49768.30999999999,
+      "export_value_million_usd": 0.05,
+      "export_value_billion_usd": 0.0,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($0.0 M)"
+      ],
+      "top_destinations": [
+        "PAPUA NEW GUINEA"
+      ],
+      "dominant_destination": "PAPUA NEW GUINEA",
+      "tx_count": 10,
+      "rank": 69,
+      "share_percent": 0.0
+    },
+    {
+      "id": "PANJANG",
+      "name": "PANJANG",
+      "name_key": "PANJANG",
+      "lat": -5.46,
+      "lng": 105.31,
+      "export_value_usd": 43574.0,
+      "export_value_million_usd": 0.04,
+      "export_value_billion_usd": 0.0,
+      "primary_commodity": "[26] Ores slag and ash",
+      "top_commodities": [
+        "[26] Ores slag and ash ($0.0 M)"
+      ],
+      "top_destinations": [
+        "JAPAN"
+      ],
+      "dominant_destination": "JAPAN",
+      "tx_count": 4,
+      "rank": 70,
+      "share_percent": 0.0
+    },
+    {
+      "id": "SEKUPANG",
+      "name": "SEKUPANG",
+      "name_key": "SEKUPANG",
+      "lat": 1.13,
+      "lng": 103.93,
+      "export_value_usd": 5397.619999999999,
+      "export_value_million_usd": 0.01,
+      "export_value_billion_usd": 0.0,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($0.0 M)"
+      ],
+      "top_destinations": [
+        "SINGAPORE",
+        "CHINA"
+      ],
+      "dominant_destination": "SINGAPORE, CHINA",
+      "tx_count": 7,
+      "rank": 71,
+      "share_percent": 0.0
+    },
+    {
+      "id": "HANG_NADIM_(U)",
+      "name": "HANG NADIM (U)",
+      "name_key": "HANG NADIM (U)",
+      "lat": 1.12,
+      "lng": 104.11,
+      "export_value_usd": 3967.39,
+      "export_value_million_usd": 0.0,
+      "export_value_billion_usd": 0.0,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($0.0 M)"
+      ],
+      "top_destinations": [
+        "THAILAND"
+      ],
+      "dominant_destination": "THAILAND",
+      "tx_count": 3,
+      "rank": 72,
+      "share_percent": 0.0
+    },
+    {
+      "id": "JUANDA_(U)-SURABAYA",
+      "name": "JUANDA (U)-SURABAYA",
+      "name_key": "JUANDA (U)-SURABAYA",
+      "lat": -7.37,
+      "lng": 112.78,
+      "export_value_usd": 69.82000000000001,
+      "export_value_million_usd": 0.0,
+      "export_value_billion_usd": 0.0,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($0.0 M)",
+        "[26] Ores slag and ash ($0.0 M)"
+      ],
+      "top_destinations": [
+        "BRUNEI DARUSSALAM",
+        "MALAYSIA",
+        "INDIA"
+      ],
+      "dominant_destination": "BRUNEI DARUSSALAM, MALAYSIA, INDIA",
+      "tx_count": 3,
+      "rank": 73,
+      "share_percent": 0.0
+    },
+    {
+      "id": "KABIL_PANAU",
+      "name": "KABIL/PANAU",
+      "name_key": "KABIL/PANAU",
+      "lat": 1.08,
+      "lng": 104.14,
+      "export_value_usd": 24.6,
+      "export_value_million_usd": 0.0,
+      "export_value_billion_usd": 0.0,
+      "primary_commodity": "[27] Mineral fuels",
+      "top_commodities": [
+        "[27] Mineral fuels ($0.0 M)"
+      ],
+      "top_destinations": [
+        "MALAYSIA"
+      ],
+      "dominant_destination": "MALAYSIA",
+      "tx_count": 1,
+      "rank": 74,
+      "share_percent": 0.0
+    }
+  ]
+}

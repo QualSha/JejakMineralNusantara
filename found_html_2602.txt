@@ -1,0 +1,21 @@
+Created At: 2026-10-02T17:11:00+07:00
+Completed At: 2026-10-02T17:11:01+07:00
+
+				The command exited with code 0.
+				Output:
+				<a href="#bab5" class="nav-pill" data-chapter="5">
+<span>Jembatan Cerita &middot; Bab 04 Menuju Bab 05</span>
+<section class="chapter-section" id="bab5" data-chapter="5">
+<div class="visual-stage-card" id="stage-bab5">
+<div id="chart-sankey" class="chart-canvas" role="region" aria-label="D
+<span>Bab 05</span>
+alui 25 pelabuhan muat strategis Indonesia menuju 18 negara mitra utama. Sembari membaca narasi di kolom kana
+<div class="story-step is-active" data-step="bab5-step-overview">
+<h3 class="step-title">25 Dermaga Muat, 18 Negara Mitra: Devisa USD 35,62 Miliar</h3>
+liar</strong> (sekitar Rp 550 Triliun) ke <strong>18 negara tujuan</strong>.
+<div class="story-step" data-step="bab5-step-coal">
+<div class="story-step" data-step="bab5-step-papua">
+<div class="story-step" data-step="bab5-step-smelter">
+<div class="story-step" data-step="bab5-step-sintesis">
+keterkaitan logistik antara 25 pelabuhan muat dan 18 negara mitra di dunia. Seluruh aliran devisa <strong>USD
+

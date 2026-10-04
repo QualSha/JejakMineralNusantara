@@ -1,0 +1,66 @@
+Created At: 2026-10-02T17:12:48+07:00
+Completed At: 2026-10-02T17:12:52+07:00
+
+				The command exited with code 0.
+				Output:
+				881:           <div class="story-step" data-step="bab5-step-sintesis">
+882:             <div class="step-label">
+883:               <span>Jembatan Cerita</span>
+884:               <span class="step-signature-note">menuju bab 6 ~</span>
+885:             </div>
+886:             <h3 class="step-title">Dari Jalinan Rantai Pasok Menuju Rute Pelayaran Samudra</h3>
+887:             <p class="step-text">
+888:               Diagram Sankey telah membuktikan keterkaitan logistik antara 25 pelabuhan muat dan 18 negara mitra di dunia. Seluruh aliran devisa <strong>USD 35,62 Miliar</strong> ini bukan sekadar garis konseptual di atas kertas; kapal-kapal bulk carrier, tongkang, tanker LNG, dan kontainer benar-benar berlayar mengarungi perairan nusantara dan samudra dunia.
+889:             </p>
+890:             <p class="step-text" style="margin-top:0.65rem;font-weight:600;color:var(--text-dark);">
+891:               Melalui selat-selat strategis nusantara (ALKI I, II, dan III) mana kapal-kapal ini melintas? Jalur maritim apa yang ditempuh hingga mencapai pelabuhan tujuan di 84 negara? Mari kita ikuti rekonstruksi geospasial arus maritim global di Bab 6.
+892:             </p>
+893:             <div class="step-highlight-pill">
+894:               <span class="highlight-label">Menuju Bab 06:</span>
+895:               <span class="highlight-val">Rekonstruksi Arus Maritim Global &rarr;</span>
+896:             </div>
+897:           </div>
+898: 
+899:         </div>
+900: 
+901:       </div>
+902:     </section>
+903: 
+904:     <!-- BAB 6: GEO FLOW MAP DUNIA (ARUS MARITIM GLOBAL) -->
+905:     <section class="chapter-section" id="bab6" data-chapter="6">
+906:       <div class="chapter-container">
+907:         
+908:         <!-- Left Column: Story Steps (Scrolling) -->
+909:         <div class="narrative-col">
+910:           <div class="chapter-header">
+911:             <div class="chapter-badge-soft">
+912:               <span>Bab 06</span>
+913:               <span>&middot;</span>
+914:               <span>Arus Maritim Global</span>
+915:             </div>
+916:             <h2 class="chapter-title">Menjangkau Dunia: Koridor Pelayaran Kapal Kargo ke Samudra Lepas</h2>
+917:             <p class="chapter-desc">
+918:               Dari 74 dermaga muat nusantara menuju pelabuhan industri dunia: peta proyeksi geospasial ini merekonstruksi lintasan fisik navigasi kapal-kapal bulk carrier, tongkang batubara, dan tanker LNG yang mengarungi perairan nusantara dan samudra lepas mengantarkan devisa tambang Indonesia senilai puluhan miliar dolar.
+919:             </p>
+920:           </div>
+921: 
+922:           <!-- Step 1: Anatomi Jalur Pelayaran Samudra (Overview Global) -->
+923:           <div class="story-step is-active" data-step="bab6-step-global">
+924:             <div class="step-label">
+925:               <span>Fakta Maritim 6.1</span>
+926:               <span class="step-signature-note">jalur samudra ~</span>
+927:             </div>
+928:             <h3 class="step-title">Jaringan Pelayaran Curah: Menghubungkan Nusantara ke Samudra Dunia</h3>
+929:             <p class="step-text">
+930:               Partikel animasi bergerak di sebelah kanan menggambarkan denyut pelayaran kapal kargo pengangkut komoditas ekstraktif Indonesia secara <em>real-time</em>. Indonesia berada tepat di titik temu dua samudra besar (<em>Hindia dan Pasifik</em>), mengendalikan koridor vital Alur Laut Kepulauan Indonesia (ALKI).
+931:             </p>
+932:             <p class="step-text" style="margin-top:0.65rem;">
+933:               Sebanyak <strong>50 rute pelayaran maritim utama</strong> memproyeksikan devisa komoditas tambang senilai <strong>USD 33,13 Miliar</strong> menuju 11 simpul pelabuhan hub internasional di kawasan regional dan global.
+934:             </p>
+935:             <div class="step-highlight-pill">
+936:               <span class="highlight-label">Total Rute Maritim:</span>
+937:               <span class="highlight-val">50 Koridor Pelayaran Aktif</span>
+938:             </div>
+939:           </div>
+940: 
+
