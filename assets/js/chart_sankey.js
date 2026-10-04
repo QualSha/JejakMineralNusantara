@@ -122,26 +122,16 @@
   };
 
   const COUNTRY_SHORT_NAMES = {
-    'Tiongkok': '🇨🇳 CN',
-    'India': '🇮🇳 IN',
-    'Jepang': '🇯🇵 JP',
-    'Singapura': '🇸🇬 SG',
-    'Malaysia': '🇲🇾 MY',
-    'Korea Selatan': '🇰🇷 KR',
-    'Filipina': '🇵🇭 PH',
-    'Thailand': '🇹🇭 TH',
-    'Vietnam': '🇻🇳 VN',
-    'Taiwan': '🇹🇼 TW',
-    'Bangladesh': '🇧🇩 BD',
-    'Kamboja': '🇰🇭 KH',
-    'Kep. Marshall': '🇲🇭 MH',
-    'Hong Kong': '🇭🇰 HK',
-    'Australia': '🇦🇺 AU',
-    'Brasil': '🇧🇷 BR',
-    'Belanda': '🇳🇱 NL',
-    'Italia': '🇮🇹 IT',
-    'Selandia Baru': '🇳🇿 NZ',
-    'Turki': '🇹🇷 TR'
+    'Tiongkok': 'Tiongkok',
+    'India': 'India',
+    'Jepang': 'Jepang',
+    'Singapura': 'Singapura',
+    'Malaysia': 'Malaysia',
+    'Korea Selatan': 'Korsel',
+    'Filipina': 'Filipina',
+    'Taiwan': 'Taiwan',
+    'Vietnam': 'Vietnam',
+    'Bangladesh': 'Bangladesh'
   };
 
   const MAJOR_OVERVIEW_PORTS = new Set([
@@ -168,7 +158,7 @@
         top: 6,
         bottom: 6,
         left: 6,
-        right: isVerySmall ? 58 : 72,
+        right: isVerySmall ? 68 : 86,
         nodeWidth: 8,
         nodeGap: 2.2,
         fontSize: 7.5,

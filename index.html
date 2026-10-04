@@ -279,7 +279,7 @@
             <div class="visual-stage-card" id="stage-bab1">
               <div class="stage-topbar">
                 <div class="stage-title-wrap">
-                  <span class="stage-tag-badge" id="treemap-stage-tag">Postur Makro</span>
+                  
                   <span class="stage-title" id="treemap-stage-title">Dekomposisi PDB Menurut 17 Lapangan Usaha</span>
                 </div>
                 <div class="stage-filters">
@@ -1116,7 +1116,7 @@
                 <!-- Baris 1: Judul Stage + Filter Komoditas -->
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                   <div class="stage-title-wrap">
-                    <span class="stage-tag-badge">Geo Flow</span>
+                    
                     <span class="stage-title" id="global-stage-title">Arus Makro: Aliran Kumulatif Devisa ke 5 Benua</span>
                   </div>
                   <!-- Filter 1: Komoditas -->
@@ -1135,11 +1135,11 @@
                   <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
                     <span style="font-size: 10.5px; font-weight: 600; color: #A8A29E; margin-right: 2px;">Benua:</span>
                     <button type="button" class="chip-soft chip-continent active" data-continent="all" onclick="filterContinent('all')">Kumulatif 5 Benua</button>
-                    <button type="button" class="chip-soft chip-continent" data-continent="Asia" onclick="filterContinent('Asia')">🌏 Asia</button>
-                    <button type="button" class="chip-soft chip-continent" data-continent="Eropa" onclick="filterContinent('Eropa')">🌍 Eropa</button>
-                    <button type="button" class="chip-soft chip-continent" data-continent="Oseania" onclick="filterContinent('Oseania')">🌏 Oseania</button>
-                    <button type="button" class="chip-soft chip-continent" data-continent="Amerika" onclick="filterContinent('Amerika')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563EB;margin-right:4px;"></span>Amerika</button>
-                    <button type="button" class="chip-soft chip-continent" data-continent="Afrika" onclick="filterContinent('Afrika')">🌍 Afrika</button>
+                    <button type="button" class="chip-soft chip-continent" data-continent="Asia" onclick="filterContinent('Asia')">Asia</button>
+                    <button type="button" class="chip-soft chip-continent" data-continent="Eropa" onclick="filterContinent('Eropa')">Eropa</button>
+                    <button type="button" class="chip-soft chip-continent" data-continent="Oseania" onclick="filterContinent('Oseania')">Oseania</button>
+                    <button type="button" class="chip-soft chip-continent" data-continent="Amerika" onclick="filterContinent('Amerika')">Amerika</button>
+                    <button type="button" class="chip-soft chip-continent" data-continent="Afrika" onclick="filterContinent('Afrika')">Afrika</button>
                   </div>
 
                   <!-- Filter Pelabuhan Asal Dropdown -->
@@ -1342,7 +1342,7 @@
       var overlay = document.getElementById('orientation-overlay');
       if (overlay) {
         overlay.classList.add('is-dismissed');
-        try { sessionStorage.setItem('dismiss_orient_v1', '1'); } catch(e){}
+        
       }
       if (requestFullscreen && document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen().then(function() {
@@ -1352,12 +1352,7 @@
         }).catch(function(){});
       }
     }
-    try {
-      if (sessionStorage.getItem('dismiss_orient_v1') === '1') {
-        var el = document.getElementById('orientation-overlay');
-        if (el) el.classList.add('is-dismissed');
-      }
-    } catch(e){}
+    
     if (window.screen && window.screen.orientation) {
       window.screen.orientation.addEventListener('change', function() {
         setTimeout(function() {

@@ -605,7 +605,7 @@
       display: none;
     }
 
-    @media screen and (max-width: 600px) and (orientation: portrait) {
+    @media screen and (max-width: 900px) and (orientation: portrait) {
       .orientation-overlay:not(.is-dismissed) {
         display: flex !important;
         position: fixed !important;
@@ -1075,7 +1075,7 @@
           <button type="button" class="chip-soft chip-continent" data-continent="Asia" onclick="filterContinent('Asia')">Asia</button>
           <button type="button" class="chip-soft chip-continent" data-continent="Eropa" onclick="filterContinent('Eropa')">Eropa</button>
           <button type="button" class="chip-soft chip-continent" data-continent="Oseania" onclick="filterContinent('Oseania')">Oseania</button>
-          <button type="button" class="chip-soft chip-continent" data-continent="Amerika" onclick="filterContinent('Amerika')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563EB;margin-right:4px;"></span>Amerika</button>
+          <button type="button" class="chip-soft chip-continent" data-continent="Amerika" onclick="filterContinent('Amerika')">Amerika</button>
           <button type="button" class="chip-soft chip-continent" data-continent="Afrika" onclick="filterContinent('Afrika')">Afrika</button>
         </div>
       </div>
@@ -1166,7 +1166,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
           <div class="db-panel-meta">
             <span class="db-panel-label">Bab 06 &middot; Arus Maritim Global</span>
-            <span class="db-panel-title">Geo Flow  -  Rekonstruksi 535 Rute Kapal Kargo ke 84 Negara di 5 Benua</span>
+            <span class="db-panel-title">Rekonstruksi 535 Rute Kapal Kargo ke 84 Negara di 5 Benua</span>
           </div>
           <!-- Filter 1: Komoditas -->
           <div class="db-panel-filters" style="display: flex; gap: 5px; align-items: center; flex-wrap: wrap;">
@@ -1184,11 +1184,11 @@
           <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
             <span style="font-size: 10.5px; font-weight: 600; color: #A8A29E; margin-right: 2px;">Benua:</span>
             <button type="button" class="chip-soft chip-continent active" data-continent="all" onclick="filterContinent('all')">Kumulatif 5 Benua</button>
-            <button type="button" class="chip-soft chip-continent" data-continent="Asia" onclick="filterContinent('Asia')">🌏 Asia</button>
-            <button type="button" class="chip-soft chip-continent" data-continent="Eropa" onclick="filterContinent('Eropa')">🌍 Eropa</button>
-            <button type="button" class="chip-soft chip-continent" data-continent="Oseania" onclick="filterContinent('Oseania')">🌏 Oseania</button>
-            <button type="button" class="chip-soft chip-continent" data-continent="Amerika" onclick="filterContinent('Amerika')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2563EB;margin-right:4px;"></span>Amerika</button>
-            <button type="button" class="chip-soft chip-continent" data-continent="Afrika" onclick="filterContinent('Afrika')">🌍 Afrika</button>
+            <button type="button" class="chip-soft chip-continent" data-continent="Asia" onclick="filterContinent('Asia')">Asia</button>
+            <button type="button" class="chip-soft chip-continent" data-continent="Eropa" onclick="filterContinent('Eropa')">Eropa</button>
+            <button type="button" class="chip-soft chip-continent" data-continent="Oseania" onclick="filterContinent('Oseania')">Oseania</button>
+            <button type="button" class="chip-soft chip-continent" data-continent="Amerika" onclick="filterContinent('Amerika')">Amerika</button>
+            <button type="button" class="chip-soft chip-continent" data-continent="Afrika" onclick="filterContinent('Afrika')">Afrika</button>
           </div>
 
           <!-- Filter Pelabuhan Asal Dropdown -->
@@ -1684,7 +1684,7 @@
       var overlay = document.getElementById('orientation-overlay');
       if (overlay) {
         overlay.classList.add('is-dismissed');
-        try { sessionStorage.setItem('dismiss_orient_v1_db', '1'); } catch(e){}
+        
       }
       if (requestFullscreen && document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen().then(function() {
@@ -1694,12 +1694,7 @@
         }).catch(function(){});
       }
     }
-    try {
-      if (sessionStorage.getItem('dismiss_orient_v1_db') === '1') {
-        var el = document.getElementById('orientation-overlay');
-        if (el) el.classList.add('is-dismissed');
-      }
-    } catch(e){}
+    
     if (window.screen && window.screen.orientation) {
       window.screen.orientation.addEventListener('change', function() {
         setTimeout(function() {

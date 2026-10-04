@@ -674,7 +674,7 @@
       noteText = 'menampilkan aliran curah batubara kalimantan & sumatera, lng papua & sulawesi ~';
     } else if (activeMode === 'kumulatif' && activeContinent === 'all') {
       titleText = 'Arus Makro: Aliran Kumulatif Devisa Ekspor ke 5 Benua (USD 49,69 Miliar)';
-      noteText = 'Asia $48,10B (96,8%) &middot; Eropa $679,6M &middot; Oseania $610,8M &middot; Amerika $223,7M &middot; Afrika $75,4M ~';
+      noteText = 'Asia $48,10B (96,8%) · Eropa $679,6M · Oseania $610,8M · Amerika $223,7M · Afrika $75,4M ~';
     } else {
       switch (stepId) {
         case 'bab6-step-asia':
