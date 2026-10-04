@@ -128,22 +128,25 @@
 
   function initNavbarDocking() {
     const navWrapper = document.querySelector('.nav-wrapper');
-    if (!navWrapper) return;
+    const grainOverlay = document.querySelector('.grain-overlay');
+    if (!navWrapper && !grainOverlay) return;
 
     function checkPosition() {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
-      // Jika scrollY masih kecil (berada di hero), navbar di bawah
-      // Jika sudah scroll melewati hero (> 80px), navbar naik ke atas
+      // Di hero (scrollY <= 80): sembunyikan grain texture agar video jernih tanpa noise kertas
+      // Melewati hero (> 80px): tampilkan grain texture untuk nuansa kertas pada visualisasi & bab cerita
       if (scrollY > 80) {
-        if (!navWrapper.classList.contains('at-top')) {
+        if (navWrapper && !navWrapper.classList.contains('at-top')) {
           navWrapper.classList.remove('at-bottom');
           navWrapper.classList.add('at-top');
         }
+        if (grainOverlay) grainOverlay.style.opacity = '0.35';
       } else {
-        if (!navWrapper.classList.contains('at-bottom')) {
+        if (navWrapper && !navWrapper.classList.contains('at-bottom')) {
           navWrapper.classList.remove('at-top');
           navWrapper.classList.add('at-bottom');
         }
+        if (grainOverlay) grainOverlay.style.opacity = '0';
       }
     }
 

@@ -4,7 +4,7 @@
   --bg-sage: #E8EFE8;
   --bg-lavender: #EFEDF4;
   --bg-peach: #FFE4E1;
-  
+
   --accent-coral: #FFB7B2;
   --accent-coral-hover: #FFA29B;
   --accent-coral-deep: #E06A55;
@@ -25,15 +25,19 @@
   --font-cursive: 'Reenie Beanie', cursive;
   --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
 
-  --radius-container: 2.25rem; /* 36px */
-  --radius-card: 1.5rem;      /* 24px */
+  --radius-container: 2.25rem;
+  /* 36px */
+  --radius-card: 1.5rem;
+  /* 24px */
   --radius-pill: 9999px;
 
   --nav-height: 56px;
 }
 
 /* Base Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -65,6 +69,7 @@ body {
   z-index: 9999;
   pointer-events: none;
   opacity: 0.35;
+  transition: opacity 300ms ease;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
@@ -94,7 +99,8 @@ body {
   left: 5%;
   width: 440px;
   height: 440px;
-  background: #FFE4E1; /* Soft Peach Blob */
+  background: #FFE4E1;
+  /* Soft Peach Blob */
   animation: floatBlob1 6s ease-in-out infinite alternate;
 }
 
@@ -103,7 +109,8 @@ body {
   right: 5%;
   width: 460px;
   height: 460px;
-  background: #E6E6FA; /* Soft Lavender Blob */
+  background: #E6E6FA;
+  /* Soft Lavender Blob */
   animation: floatBlob2 7s ease-in-out infinite alternate-reverse;
 }
 
@@ -112,18 +119,29 @@ body {
   left: 30%;
   width: 380px;
   height: 380px;
-  background: #E8EFE8; /* Soft Sage Blob */
+  background: #E8EFE8;
+  /* Soft Sage Blob */
   animation: floatBlob1 8s ease-in-out infinite alternate;
 }
 
 @keyframes floatBlob1 {
-  0% { transform: translateY(0px) scale(1); }
-  100% { transform: translateY(-14px) scale(1.04); }
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+
+  100% {
+    transform: translateY(-14px) scale(1.04);
+  }
 }
 
 @keyframes floatBlob2 {
-  0% { transform: translateY(0px) scale(1); }
-  100% { transform: translateY(14px) scale(0.96); }
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+
+  100% {
+    transform: translateY(14px) scale(0.96);
+  }
 }
 
 /* Accessibility */
@@ -139,6 +157,7 @@ body {
   text-decoration: none;
   font-weight: 500;
 }
+
 .skip-link:focus {
   top: 1.5rem;
 }
@@ -150,13 +169,13 @@ body {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000;
+  z-index: 20000;
   width: calc(100% - 32px);
   max-width: 1240px;
   margin: 0;
   padding: 0;
   transition: top 400ms cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 300ms ease;
+    opacity 300ms ease;
 }
 
 /* Bottom docking (Hero view) */
@@ -238,6 +257,7 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
 .nav-links-scroll::-webkit-scrollbar {
   display: none;
 }
@@ -314,13 +334,14 @@ body {
    ======================================================== */
 .hero-section {
   position: relative;
-  z-index: 1;
+  z-index: 10000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1.5rem 6.5rem; /* bottom padding reserves room for bottom-docked navbar */
+  padding: 2rem 1.5rem 6.5rem;
+  /* bottom padding reserves room for bottom-docked navbar */
   text-align: center;
   box-sizing: border-box;
 }
@@ -430,7 +451,8 @@ body {
 .scenario-card {
   background: #FFFFFF;
   border: 1px solid var(--border-soft);
-  border-radius: var(--radius-card); /* 24px */
+  border-radius: var(--radius-card);
+  /* 24px */
   padding: 1.35rem 1.5rem;
   box-shadow: var(--shadow-soft);
   text-align: left;
@@ -575,7 +597,8 @@ body {
 .story-step {
   background: #FFFFFF;
   border: 1px solid var(--border-soft);
-  border-radius: var(--radius-card); /* 24px */
+  border-radius: var(--radius-card);
+  /* 24px */
   padding: 1.85rem 1.75rem;
   box-shadow: var(--shadow-soft);
   margin-bottom: 24vh;
@@ -665,7 +688,8 @@ body {
 .visual-stage-card {
   background: #FFFFFF;
   border: 1px solid var(--border-soft);
-  border-radius: var(--radius-container); /* 36px */
+  border-radius: var(--radius-container);
+  /* 36px */
   box-shadow: var(--shadow-soft);
   overflow: hidden;
   display: flex;
@@ -766,12 +790,14 @@ body {
   background: var(--bg-primary) !important;
 }
 
-.map-info-panel, .map-legend-panel {
+.map-info-panel,
+.map-legend-panel {
   background: rgba(253, 252, 248, 0.94) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
   border: 1px solid var(--border-soft) !important;
-  border-radius: 1.25rem !important; /* 20px */
+  border-radius: 1.25rem !important;
+  /* 20px */
   padding: 0.85rem 1.15rem !important;
   box-shadow: var(--shadow-soft) !important;
   max-width: 290px;
@@ -1120,9 +1146,11 @@ body {
     padding: 0 1rem;
     margin: 2rem auto 1rem;
   }
+
   .chart-canvas-wide {
     height: 520px !important;
   }
+
   .wide-story-card {
     padding: 1.5rem 1.2rem;
   }
@@ -1132,6 +1160,7 @@ body {
    BAB 5: LAYOUT TERBALIK (GRAFIK DI KIRI, TEKS CERITA DI KANAN)
    ======================================================== */
 @media (min-width: 1024px) {
+
   #bab5 .chapter-container,
   .chapter-container.layout-reversed {
     grid-template-columns: 1fr 440px !important;
@@ -1252,8 +1281,13 @@ body {
 }
 
 @keyframes vesselMove {
-  from { stroke-dashoffset: 56; }
-  to { stroke-dashoffset: 0; }
+  from {
+    stroke-dashoffset: 56;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* Hub Markers & Tooltip */
@@ -1267,9 +1301,20 @@ body {
 }
 
 @keyframes beaconWave {
-  0% { r: 4; opacity: 0.95; }
-  70% { r: 16; opacity: 0; }
-  100% { r: 16; opacity: 0; }
+  0% {
+    r: 4;
+    opacity: 0.95;
+  }
+
+  70% {
+    r: 16;
+    opacity: 0;
+  }
+
+  100% {
+    r: 16;
+    opacity: 0;
+  }
 }
 
 .globe-tooltip-softly {
@@ -1401,6 +1446,7 @@ body {
   overflow: hidden;
   background: var(--bg-primary);
   isolation: isolate;
+  z-index: 10000;
 }
 
 .hero-bg-video {
@@ -1410,7 +1456,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -2;
-  opacity: 0.26;
+  opacity: 0.36;
   pointer-events: none;
 }
 
@@ -1471,8 +1517,15 @@ body {
 }
 
 @keyframes fadeInOrient {
-  from { opacity: 0; transform: scale(0.98); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .orientation-card {
@@ -1518,9 +1571,20 @@ body {
 }
 
 @keyframes rotatePhoneContinuous {
-  0%, 20% { transform: rotate(0deg); }
-  50%, 80% { transform: rotate(-90deg); }
-  100% { transform: rotate(0deg); }
+
+  0%,
+  20% {
+    transform: rotate(0deg);
+  }
+
+  50%,
+  80% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .orient-rotate-arrow {
@@ -1534,9 +1598,23 @@ body {
 }
 
 @keyframes pulseArrow {
-  0%, 20% { opacity: 0.3; transform: scale(0.85); }
-  50%, 80% { opacity: 1; transform: scale(1.15); }
-  100% { opacity: 0.3; transform: scale(0.85); }
+
+  0%,
+  20% {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
+
+  50%,
+  80% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
 }
 
 .orient-badge {
@@ -1626,10 +1704,12 @@ body {
 
 /* Contain chapter clipping below 1024px & General Mobile Optimization */
 @media screen and (max-width: 1023px) {
+
   /* Hide KPI scenario strip on all responsive mobile viewports */
   .scenario-strip {
     display: none !important;
   }
+
   .chapter-section {
     position: relative;
     contain: layout style;
@@ -1638,23 +1718,30 @@ body {
     max-width: 100vw !important;
     box-sizing: border-box !important;
   }
+
   .chapter-container {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
+
   .visual-stage-card {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
-  .chart-canvas, #chart-sankey, #stage-bab5 {
+
+  .chart-canvas,
+  #chart-sankey,
+  #stage-bab5 {
     touch-action: pan-y !important;
   }
+
   /* Map Legends Bab 2 & 3: Compact size, remove redundant top info box */
   .map-info-panel {
     display: none !important;
   }
+
   .map-legend-panel {
     padding: 5px 8px !important;
     max-width: 170px !important;
@@ -1666,14 +1753,17 @@ body {
     transform: scale(0.82) !important;
     transform-origin: bottom left !important;
   }
+
   .map-legend-panel div {
     font-size: 8px !important;
     margin-bottom: 2px !important;
   }
+
   .map-legend-panel span[style*="width:14px"] {
     width: 8px !important;
     height: 8px !important;
   }
+
   .map-legend-panel span[style*="width:12px"] {
     width: 8px !important;
     height: 8px !important;
@@ -1682,6 +1772,7 @@ body {
 
 /* Landscape Mode (Phones & Compact Tablets: 560px to 1023px, landscape) */
 @media screen and (min-width: 560px) and (orientation: landscape) and (max-width: 1023px) {
+
   /* Navbar: at-bottom on Hero, at-top on scroll, with 6 swipeable chapters */
   .nav-wrapper {
     position: fixed !important;
@@ -1693,14 +1784,17 @@ body {
     z-index: 1000 !important;
     transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
+
   .nav-wrapper.at-bottom {
     top: auto !important;
     bottom: 14px !important;
   }
+
   .nav-wrapper.at-top {
     top: 8px !important;
     bottom: auto !important;
   }
+
   .floating-navbar {
     padding: 4px 10px !important;
     height: 42px !important;
@@ -1711,6 +1805,7 @@ body {
     border-radius: 9999px !important;
     overflow: hidden !important;
   }
+
   .nav-brand {
     flex-shrink: 0 !important;
     display: flex !important;
@@ -1718,13 +1813,17 @@ body {
     padding-right: 6px !important;
     border-right: 1px solid rgba(120, 113, 108, 0.15) !important;
   }
+
   .brand-circle {
     width: 24px !important;
     height: 24px !important;
   }
-  .brand-title, .brand-sub {
+
+  .brand-title,
+  .brand-sub {
     display: none !important;
   }
+
   .nav-links-scroll {
     display: flex !important;
     flex: 1 1 auto !important;
@@ -1736,9 +1835,11 @@ body {
     white-space: nowrap !important;
     padding: 2px 0 !important;
   }
+
   .nav-links-scroll::-webkit-scrollbar {
     display: none !important;
   }
+
   .nav-pill {
     display: inline-flex !important;
     align-items: center !important;
@@ -1749,6 +1850,7 @@ body {
     white-space: nowrap !important;
     flex-shrink: 0 !important;
   }
+
   .nav-pill-cta {
     flex-shrink: 0 !important;
     display: inline-flex !important;
@@ -1763,7 +1865,9 @@ body {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important;
     gap: 1.25rem !important;
   }
-  .visual-col, .narrative-col {
+
+  .visual-col,
+  .narrative-col {
     min-width: 0 !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
@@ -1780,56 +1884,69 @@ body {
     align-items: center !important;
     box-sizing: border-box !important;
   }
+
   .scenario-strip {
     display: none !important;
   }
+
   .hero-title {
     font-size: 30px !important;
     line-height: 1.15 !important;
     letter-spacing: -0.8px !important;
     margin-bottom: 10px !important;
   }
+
   .hero-lead {
     font-size: 13.5px !important;
     line-height: 1.5 !important;
     margin-bottom: 18px !important;
     max-width: 540px !important;
   }
+
   .hero-actions .btn-pill-coral,
   .hero-actions .btn-pill-white {
     padding: 8px 18px !important;
     font-size: 12px !important;
   }
+
   .scenario-strip {
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 8px !important;
   }
+
   .scenario-card {
     padding: 10px 12px !important;
   }
+
   .scenario-card-value {
     font-size: 16px !important;
   }
+
   .scenario-card-desc {
     font-size: 10px !important;
     line-height: 1.3 !important;
   }
+
   .conversion-section {
     min-height: 100vh !important;
     padding: 30px 16px !important;
   }
+
   .conversion-card {
     padding: 22px 24px !important;
     max-width: 620px !important;
   }
+
   .conversion-title {
     font-size: 1.35rem !important;
     margin-bottom: 0.4rem !important;
   }
+
   .conversion-desc {
     font-size: 0.85rem !important;
     margin-bottom: 1.2rem !important;
   }
+
   .conversion-actions .btn-pill-coral,
   .conversion-actions .btn-pill-white {
     padding: 8px 18px !important;
@@ -1841,20 +1958,24 @@ body {
     padding: 24px 16px 40px !important;
     scroll-margin-top: 50px !important;
   }
+
   .chapter-container {
     display: grid !important;
     grid-template-columns: minmax(260px, 320px) 1fr !important;
     gap: 1.25rem !important;
     align-items: start !important;
   }
+
   #bab5 .chapter-container,
   .chapter-container.layout-reversed {
     grid-template-columns: 1fr minmax(260px, 320px) !important;
   }
+
   .visual-col {
     position: relative !important;
     height: 100% !important;
   }
+
   .visual-stage-wrapper {
     position: -webkit-sticky !important;
     position: sticky !important;
@@ -1864,6 +1985,7 @@ body {
     align-self: start !important;
     z-index: 10 !important;
   }
+
   .visual-stage-card {
     height: 100% !important;
     display: flex !important;
@@ -1883,6 +2005,7 @@ body {
     gap: 6px !important;
     flex-wrap: nowrap !important;
   }
+
   .stage-title-wrap {
     flex: 1 1 auto !important;
     overflow: hidden !important;
@@ -1891,12 +2014,14 @@ body {
     gap: 6px !important;
     min-width: 0 !important;
   }
+
   .stage-title {
     font-size: 11.5px !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
   }
+
   .stage-filters {
     flex: 0 0 auto !important;
     display: flex !important;
@@ -1904,6 +2029,7 @@ body {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
   }
+
   .chip-soft {
     font-size: 10px !important;
     padding: 2px 7px !important;
@@ -1918,6 +2044,7 @@ body {
     max-height: 360px !important;
     width: 100% !important;
   }
+
   .stage-footer {
     padding: 3px 8px !important;
     font-size: 9px !important;
@@ -1927,22 +2054,27 @@ body {
   .narrative-col {
     padding-bottom: 30px !important;
   }
+
   .chapter-header {
     margin-bottom: 14px !important;
   }
+
   .chapter-badge-soft {
     font-size: 8.5px !important;
     padding: 2px 7px !important;
   }
+
   .chapter-title {
     font-size: 20px !important;
     line-height: 1.25 !important;
     margin: 4px 0 6px !important;
   }
+
   .chapter-desc {
     font-size: 12px !important;
     line-height: 1.5 !important;
   }
+
   .story-step {
     padding: 14px 14px !important;
     margin-bottom: 18px !important;
@@ -1952,16 +2084,20 @@ body {
     filter: none !important;
     transform: none !important;
   }
+
   .step-label {
     font-size: 9px !important;
   }
+
   .step-title {
     font-size: 15px !important;
   }
+
   .step-text {
     font-size: 12px !important;
     line-height: 1.5 !important;
   }
+
   .step-highlight-pill {
     padding: 4px 10px !important;
     font-size: 10px !important;
@@ -1974,22 +2110,26 @@ body {
   .chapter-section {
     padding: 40px 20px 60px !important;
   }
+
   .chapter-container {
     display: grid !important;
     grid-template-columns: 320px 1fr !important;
     gap: 1.75rem !important;
     align-items: start !important;
   }
+
   #bab5 .chapter-container,
   .chapter-container.layout-reversed {
     grid-template-columns: 1fr 320px !important;
   }
+
   .visual-stage-wrapper {
     position: sticky !important;
     top: 76px !important;
     height: calc(100vh - 100px) !important;
     max-height: 600px !important;
   }
+
   .visual-stage-card .chart-canvas {
     height: calc(100vh - 200px) !important;
     min-height: 380px !important;
@@ -1998,6 +2138,7 @@ body {
 
 /* Mobile Portrait Mode (< 600px, portrait) */
 @media screen and (max-width: 600px) and (orientation: portrait) {
+
   /* Navbar: at-bottom on Hero, at-top on scroll, with 6 swipeable chapters */
   .nav-wrapper {
     position: fixed !important;
@@ -2009,14 +2150,17 @@ body {
     z-index: 1000 !important;
     transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
+
   .nav-wrapper.at-bottom {
     top: auto !important;
     bottom: 16px !important;
   }
+
   .nav-wrapper.at-top {
     top: 10px !important;
     bottom: auto !important;
   }
+
   .floating-navbar {
     padding: 4px 6px !important;
     height: 44px !important;
@@ -2032,6 +2176,7 @@ body {
     box-shadow: 0 4px 20px rgba(41, 37, 36, 0.14) !important;
     overflow: hidden !important;
   }
+
   .nav-brand {
     flex-shrink: 0 !important;
     display: flex !important;
@@ -2039,13 +2184,17 @@ body {
     padding-right: 4px !important;
     border-right: 1px solid rgba(120, 113, 108, 0.15) !important;
   }
+
   .brand-circle {
     width: 26px !important;
     height: 26px !important;
   }
-  .brand-title, .brand-sub {
+
+  .brand-title,
+  .brand-sub {
     display: none !important;
   }
+
   .nav-links-scroll {
     display: flex !important;
     flex: 1 1 auto !important;
@@ -2057,9 +2206,11 @@ body {
     white-space: nowrap !important;
     padding: 2px 2px !important;
   }
+
   .nav-links-scroll::-webkit-scrollbar {
     display: none !important;
   }
+
   .nav-pill {
     display: inline-flex !important;
     align-items: center !important;
@@ -2072,15 +2223,18 @@ body {
     color: var(--text-muted) !important;
     background: transparent !important;
   }
+
   .nav-pill.active {
     background: var(--bg-lavender) !important;
     color: var(--text-dark) !important;
   }
+
   .nav-pill-num {
     font-family: var(--font-cursive) !important;
     font-size: 12.5px !important;
     color: var(--accent-coral-deep) !important;
   }
+
   .nav-pill-cta {
     flex-shrink: 0 !important;
     display: inline-flex !important;
@@ -2100,21 +2254,25 @@ body {
     align-items: center !important;
     box-sizing: border-box !important;
   }
+
   .hero-title {
     font-size: 27px !important;
     line-height: 1.2 !important;
     margin-bottom: 12px !important;
   }
+
   .hero-lead {
     font-size: 13px !important;
     line-height: 1.55 !important;
     margin-bottom: 22px !important;
     max-width: 480px !important;
   }
+
   .hero-actions {
     gap: 8px !important;
     margin-bottom: 0 !important;
   }
+
   .hero-actions .btn-pill-coral,
   .hero-actions .btn-pill-white {
     padding: 9px 18px !important;
@@ -2129,6 +2287,7 @@ body {
     max-width: 100vw !important;
     overflow-x: hidden !important;
   }
+
   .chapter-container {
     display: flex !important;
     flex-direction: column !important;
@@ -2136,6 +2295,7 @@ body {
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
+
   .chapter-container .visual-col {
     order: 1 !important;
     position: sticky !important;
@@ -2146,6 +2306,7 @@ body {
     width: 100% !important;
     box-sizing: border-box !important;
   }
+
   .chapter-container .narrative-col {
     order: 2 !important;
     width: 100% !important;
@@ -2154,11 +2315,13 @@ body {
     overflow-wrap: break-word !important;
     word-break: break-word !important;
   }
+
   .visual-stage-wrapper {
     position: static !important;
     height: auto !important;
     width: 100% !important;
   }
+
   .visual-stage-card {
     border-radius: 16px !important;
     border: 1px solid var(--border-soft) !important;
@@ -2167,6 +2330,7 @@ body {
     box-sizing: border-box !important;
     overflow: hidden !important;
   }
+
   .visual-stage-card .chart-canvas {
     height: 30vh !important;
     min-height: 200px !important;
@@ -2183,16 +2347,19 @@ body {
     width: 100% !important;
     box-sizing: border-box !important;
   }
+
   .stage-title {
     font-size: 11.5px !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
   }
+
   .stage-filters {
     gap: 4px !important;
     flex-wrap: wrap !important;
   }
+
   .chip-soft {
     padding: 3px 7px !important;
     font-size: 10px !important;
@@ -2204,38 +2371,46 @@ body {
     min-height: 190px !important;
     max-height: 230px !important;
   }
+
   #stage-bab5 .stage-topbar {
     padding: 5px 8px !important;
     gap: 4px !important;
   }
+
   #stage-bab5 #sankey-stage-title {
     font-size: 10.5px !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
   }
+
   #sankey-filters {
     width: 100% !important;
     display: flex !important;
     justify-content: space-between !important;
     gap: 6px !important;
   }
-  #sankey-filters > div {
+
+  #sankey-filters>div {
     flex: 1 1 50% !important;
   }
+
   #sankey-filters label {
     display: none !important;
   }
+
   #sankey-filters .sankey-select {
     width: 100% !important;
     max-width: 100% !important;
     font-size: 10px !important;
     padding: 3px 6px !important;
   }
+
   #stage-bab5 .stage-footer {
     padding: 4px 8px !important;
     font-size: 8.5px !important;
   }
+
   #sankey-footer-note {
     display: none !important;
   }
@@ -2250,11 +2425,13 @@ body {
     overflow-wrap: break-word !important;
     word-break: break-word !important;
   }
+
   #bab5 .chapter-desc {
     font-size: 12.5px !important;
     line-height: 1.55 !important;
     word-break: break-word !important;
   }
+
   .step-highlight-pill {
     width: 100% !important;
     max-width: 100% !important;
@@ -2265,9 +2442,11 @@ body {
     border-radius: 12px !important;
     padding: 7px 11px !important;
   }
+
   .highlight-label {
     font-size: 10px !important;
   }
+
   .highlight-val {
     font-size: 11px !important;
     word-break: break-word !important;
@@ -2280,10 +2459,12 @@ body {
     padding: 6px 10px !important;
     gap: 4px !important;
   }
+
   #stage-bab6 .chip-continent {
     font-size: 9.5px !important;
     padding: 2px 6px !important;
   }
+
   #story-global-port-select {
     max-width: 160px !important;
     font-size: 10px !important;
@@ -2303,10 +2484,12 @@ body {
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
+
   .step-title {
     font-size: 15px !important;
     margin-bottom: 6px !important;
   }
+
   .step-text {
     font-size: 12.5px !important;
     line-height: 1.55 !important;
@@ -2318,14 +2501,17 @@ body {
     padding: 0 10px !important;
     margin: 1.5rem auto 1rem !important;
   }
+
   .chart-canvas-wide {
     height: 280px !important;
     min-height: 240px !important;
   }
+
   .wide-story-card {
     padding: 16px 14px !important;
     border-radius: 16px !important;
   }
+
   .wide-story-grid {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
@@ -2340,15 +2526,18 @@ body {
     justify-content: center !important;
     align-items: center !important;
   }
+
   .conversion-card {
     padding: 2rem 1.2rem !important;
     border-radius: 18px !important;
     width: 100% !important;
     max-width: 440px !important;
   }
+
   .conversion-title {
     font-size: 1.35rem !important;
   }
+
   .conversion-desc {
     font-size: 0.85rem !important;
     margin-bottom: 1.5rem !important;
@@ -2363,22 +2552,26 @@ body {
     padding: 16px 14px 72px !important;
     box-sizing: border-box !important;
   }
+
   .hero-title {
     font-size: 24px !important;
     line-height: 1.15 !important;
     margin-bottom: 6px !important;
   }
+
   .hero-lead {
     font-size: 11.5px !important;
     line-height: 1.4 !important;
     margin-bottom: 12px !important;
     max-width: 580px !important;
   }
+
   .hero-actions .btn-pill-coral,
   .hero-actions .btn-pill-white {
     padding: 7px 16px !important;
     font-size: 11px !important;
   }
+
   .scenario-strip {
     display: none !important;
   }
