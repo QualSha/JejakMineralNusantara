@@ -85,7 +85,116 @@
     'Turki': '🇹🇷 Turki'
   };
 
-  function formatNodeLabel(name) {
+
+  const PORT_SHORT_NAMES = {
+    'TANJUNG PRIOK': 'Tg. Priok',
+    'SOEKARNO-HATTA (U)': 'Soetta',
+    'AMAMAPARE': 'Amamapare',
+    'AMAMAPARE IJ': 'Amamapare IJ',
+    'BINTUNI IRIAN JAYA': 'Bintuni',
+    'SATUI': 'Satui',
+    'BANJARMASIN': 'Banjarmasin',
+    'SAMARINDA': 'Samarinda',
+    'BALIKPAPAN': 'Balikpapan',
+    'TEREMPA': 'Tarempa',
+    'TANJUNG BARA KL': 'Tg. Bara',
+    'MUSI RIVER/BOOM BARU': 'Boom Baru',
+    'LUWUK': 'Luwuk',
+    'BELAKANG PADANG': 'B. Padang',
+    'TANJUNG REDEP': 'Tg. Redep',
+    'BONTHAN BAY SULAWESI': 'Bantaeng',
+    'TANJUNG BALAI KARIMUN': 'Karimun',
+    'KALIORANG': 'Kaliorang',
+    'KOTABARU': 'Kotabaru',
+    'ADANG BAY': 'Adang Bay',
+    'LINGKAS TARAKAN': 'Tarakan',
+    'MEULABOH': 'Meulaboh',
+    'BAHUDOPI': 'Bahodopi',
+    'SUNGAI PAKNING': 'S. Pakning',
+    'SANGKULIRANG': 'Sangkulirang',
+    'TARAHAN': 'Tarahan',
+    'NORTH PULAU LAUT': 'P. Laut',
+    'BENETE': 'Benete',
+    'GRESIK': 'Gresik',
+    'TUBAN': 'Tuban',
+    'CILACAP': 'Cilacap',
+    'TANJUNG PERAK': 'Tg. Perak'
+  };
+
+  const COUNTRY_SHORT_NAMES = {
+    'Tiongkok': '🇨🇳 CN',
+    'India': '🇮🇳 IN',
+    'Jepang': '🇯🇵 JP',
+    'Singapura': '🇸🇬 SG',
+    'Malaysia': '🇲🇾 MY',
+    'Korea Selatan': '🇰🇷 KR',
+    'Filipina': '🇵🇭 PH',
+    'Thailand': '🇹🇭 TH',
+    'Vietnam': '🇻🇳 VN',
+    'Taiwan': '🇹🇼 TW',
+    'Bangladesh': '🇧🇩 BD',
+    'Kamboja': '🇰🇭 KH',
+    'Kep. Marshall': '🇲🇭 MH',
+    'Hong Kong': '🇭🇰 HK',
+    'Australia': '🇦🇺 AU',
+    'Brasil': '🇧🇷 BR',
+    'Belanda': '🇳🇱 NL',
+    'Italia': '🇮🇹 IT',
+    'Selandia Baru': '🇳🇿 NZ',
+    'Turki': '🇹🇷 TR'
+  };
+
+  const MAJOR_OVERVIEW_PORTS = new Set([
+    'BANJARMASIN', 'SAMARINDA', 'AMAMAPARE', 'BINTUNI IRIAN JAYA',
+    'BALIKPAPAN', 'TANJUNG BARA KL', 'MUSI RIVER/BOOM BARU', 'SATUI',
+    'TANJUNG REDEP', 'BONTHAN BAY SULAWESI', 'TANJUNG BALAI KARIMUN',
+    'BAHUDOPI', 'LUWUK', 'KOTABARU'
+  ]);
+
+  const MAJOR_OVERVIEW_COUNTRIES = new Set([
+    'Tiongkok', 'India', 'Jepang', 'Singapura', 'Malaysia',
+    'Korea Selatan', 'Filipina', 'Taiwan', 'Vietnam', 'Bangladesh'
+  ]);
+
+  function getSankeyLayout() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const isMobile = (w < 768) || (w < 1024 && h < 550);
+    const isVerySmall = w < 480;
+
+    if (isMobile) {
+      return {
+        isMobile: true,
+        top: 6,
+        bottom: 6,
+        left: 6,
+        right: isVerySmall ? 58 : 72,
+        nodeWidth: 8,
+        nodeGap: 2.2,
+        fontSize: 7.5,
+        fontSizeBold: 8.5
+      };
+    }
+
+    // Native Desktop (100% UNTOUCHED)
+    return {
+      isMobile: false,
+      top: 16,
+      bottom: 16,
+      left: 16,
+      right: 150,
+      nodeWidth: 14,
+      nodeGap: 6,
+      fontSize: 10.5,
+      fontSizeBold: 11
+    };
+  }
+
+  function formatNodeLabel(name, isMobile = false) {
+    if (isMobile) {
+      if (PORT_SHORT_NAMES[name]) return PORT_SHORT_NAMES[name];
+      if (COUNTRY_SHORT_NAMES[name]) return COUNTRY_SHORT_NAMES[name];
+    }
     if (PORT_DISPLAY_NAMES[name]) return PORT_DISPLAY_NAMES[name];
     if (COUNTRY_FLAGS[name]) return COUNTRY_FLAGS[name];
     if (typeof name === 'string' && name === name.toUpperCase() && name.length > 2) {
@@ -135,6 +244,7 @@
     if (!chartInstance || !rawFlowData || !rawFlowData.sankey) return;
 
     currentStep = stepId;
+    const layout = getSankeyLayout();
     const baseData = rawFlowData.sankey;
     let nodes = JSON.parse(JSON.stringify(baseData.nodes || []));
     let links = JSON.parse(JSON.stringify(baseData.links || []));
@@ -162,22 +272,32 @@
           links.some(l => l.target === 'Tiongkok' && l.source === node.name);
       }
 
+      let showLabel = true;
+      if (layout.isMobile) {
+        if (stepId === 'bab5-step-overview' || stepId === 'bab5-step-sintesis') {
+          showLabel = MAJOR_OVERVIEW_PORTS.has(node.name) || MAJOR_OVERVIEW_COUNTRIES.has(node.name);
+        } else {
+          showLabel = isNodeHighlighted;
+        }
+      }
+
       return {
         ...node,
         itemStyle: {
           color: color,
-          opacity: isNodeHighlighted ? 1 : 0.25,
+          opacity: isNodeHighlighted ? 1 : (layout.isMobile ? 0.12 : 0.25),
           borderColor: '#FDFCF8',
-          borderWidth: 1.5,
-          borderRadius: 3
+          borderWidth: layout.isMobile ? 1 : 1.5,
+          borderRadius: 2
         },
         label: {
+          show: showLabel,
           color: isNodeHighlighted ? '#292524' : '#A8A29E',
-          fontSize: 10.5,
+          fontSize: isNodeHighlighted ? layout.fontSizeBold : layout.fontSize,
           fontFamily: "'Outfit', sans-serif",
           fontWeight: isNodeHighlighted ? 600 : 400,
           formatter: function (params) {
-            return formatNodeLabel(params.name);
+            return formatNodeLabel(params.name, layout.isMobile);
           }
         }
       };
@@ -285,12 +405,12 @@
       series: [{
         type: 'sankey',
         layout: 'none',
-        top: 16,
-        bottom: 16,
-        left: 16,
-        right: 150,
-        nodeWidth: 14,
-        nodeGap: 6,
+        top: layout.top,
+        bottom: layout.bottom,
+        left: layout.left,
+        right: layout.right,
+        nodeWidth: layout.nodeWidth,
+        nodeGap: layout.nodeGap,
         layoutIterations: 32,
         emphasis: {
           focus: 'adjacency'
@@ -418,6 +538,8 @@
       totalVal += (l.value || 0);
     });
 
+    const layout = getSankeyLayout();
+
     let filteredNodes = (baseData.nodes || []).filter(n => activeNodesSet.has(n.name)).map(node => {
       let color = '#78716C';
       for (const [cat, c] of Object.entries(CATEGORY_COLORS)) {
@@ -432,16 +554,19 @@
           color: color,
           opacity: 1,
           borderColor: '#FDFCF8',
-          borderWidth: 1.5,
-          borderRadius: 3
+          borderWidth: layout.isMobile ? 1 : 1.5,
+          borderRadius: 2
         },
         label: {
+          show: (layout.isMobile && portKey === 'all' && countryKey === 'all')
+            ? (MAJOR_OVERVIEW_PORTS.has(node.name) || MAJOR_OVERVIEW_COUNTRIES.has(node.name))
+            : true,
           color: '#292524',
-          fontSize: 11,
+          fontSize: layout.fontSizeBold,
           fontFamily: "'Outfit', sans-serif",
           fontWeight: 600,
           formatter: function (params) {
-            return formatNodeLabel(params.name);
+            return formatNodeLabel(params.name, layout.isMobile);
           }
         }
       };
@@ -522,12 +647,12 @@
       series: [{
         type: 'sankey',
         layout: 'none',
-        top: 16,
-        bottom: 16,
-        left: 16,
-        right: 150,
-        nodeWidth: 14,
-        nodeGap: 6,
+        top: layout.top,
+        bottom: layout.bottom,
+        left: layout.left,
+        right: layout.right,
+        nodeWidth: layout.nodeWidth,
+        nodeGap: layout.nodeGap,
         layoutIterations: 32,
         emphasis: {
           focus: 'adjacency'
@@ -594,6 +719,8 @@
       totalVal += (l.value || 0);
     });
 
+    const layout = getSankeyLayout();
+
     const filteredNodes = allNodes.filter(n => activeNodesSet.has(n.name)).map(node => {
       let color = '#78716C';
       for (const [cat, c] of Object.entries(CATEGORY_COLORS)) {
@@ -608,16 +735,19 @@
           color: color,
           opacity: 1,
           borderColor: '#FDFCF8',
-          borderWidth: 1.5,
-          borderRadius: 3
+          borderWidth: layout.isMobile ? 1 : 1.5,
+          borderRadius: 2
         },
         label: {
+          show: (layout.isMobile && (portSet.size >= 20 || countrySet.size >= 15))
+            ? (MAJOR_OVERVIEW_PORTS.has(node.name) || MAJOR_OVERVIEW_COUNTRIES.has(node.name))
+            : true,
           color: '#292524',
-          fontSize: 11,
+          fontSize: layout.fontSizeBold,
           fontFamily: "'Outfit', sans-serif",
           fontWeight: 600,
           formatter: function (params) {
-            return formatNodeLabel(params.name);
+            return formatNodeLabel(params.name, layout.isMobile);
           }
         }
       };
@@ -690,12 +820,12 @@
       series: [{
         type: 'sankey',
         layout: 'none',
-        top: 16,
-        bottom: 16,
-        left: 16,
-        right: 150,
-        nodeWidth: 14,
-        nodeGap: 6,
+        top: layout.top,
+        bottom: layout.bottom,
+        left: layout.left,
+        right: layout.right,
+        nodeWidth: layout.nodeWidth,
+        nodeGap: layout.nodeGap,
         layoutIterations: 32,
         emphasis: {
           focus: 'adjacency'
@@ -736,9 +866,27 @@
     render(targetStep);
   }
 
-  function resize() {
-    if (chartInstance) chartInstance.resize();
+  let lastIsMobile = getSankeyLayout().isMobile;
+  function handleResize() {
+    if (!chartInstance) return;
+    const currentIsMobile = getSankeyLayout().isMobile;
+    if (currentIsMobile !== lastIsMobile) {
+      lastIsMobile = currentIsMobile;
+      if (selectedPortFilter !== 'all' || selectedCountryFilter !== 'all') {
+        filterSankeyBySelect(selectedPortFilter, selectedCountryFilter);
+      } else {
+        render(currentStep);
+      }
+    } else {
+      chartInstance.resize();
+    }
   }
+
+  function resize() {
+    handleResize();
+  }
+
+  window.addEventListener('resize', handleResize);
 
   window.filterSankeyBySelect = filterSankeyBySelect;
   window.filterSankeyMulti = filterSankeyMulti;
