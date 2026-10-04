@@ -1619,6 +1619,10 @@ body {
 
 /* Contain chapter clipping below 1024px & General Mobile Optimization */
 @media screen and (max-width: 1023px) {
+  /* Hide KPI scenario strip on all responsive mobile viewports */
+  .scenario-strip {
+    display: none !important;
+  }
   .chapter-section {
     position: relative;
     contain: layout style;
@@ -1671,42 +1675,91 @@ body {
 
 /* Landscape Mode (Phones & Compact Tablets: 560px to 1023px, landscape) */
 @media screen and (min-width: 560px) and (orientation: landscape) and (max-width: 1023px) {
-  /* Slim Navbar */
+  /* Navbar: at-bottom on Hero, at-top on scroll, with 6 swipeable chapters */
   .nav-wrapper {
     position: fixed !important;
-    top: 8px !important;
-    bottom: auto !important;
     left: 14px !important;
     right: 14px !important;
     width: auto !important;
     max-width: none !important;
     transform: none !important;
     z-index: 1000 !important;
+    transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .nav-wrapper.at-bottom {
+    top: auto !important;
+    bottom: 14px !important;
+  }
+  .nav-wrapper.at-top {
+    top: 8px !important;
+    bottom: auto !important;
   }
   .floating-navbar {
-    padding: 5px 14px !important;
+    padding: 4px 10px !important;
     height: 42px !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: space-between !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+  }
+  .nav-brand {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-right: 6px !important;
+    border-right: 1px solid rgba(120, 113, 108, 0.15) !important;
   }
   .brand-circle {
     width: 24px !important;
     height: 24px !important;
   }
-  .brand-title {
-    font-size: 12.5px !important;
-  }
-  .brand-sub {
+  .brand-title, .brand-sub {
     display: none !important;
   }
   .nav-links-scroll {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    align-items: center !important;
+    gap: 4px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    white-space: nowrap !important;
+    padding: 2px 0 !important;
+  }
+  .nav-links-scroll::-webkit-scrollbar {
     display: none !important;
   }
+  .nav-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 3px 8px !important;
+    border-radius: 9999px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
   .nav-pill-cta {
+    flex-shrink: 0 !important;
     display: inline-flex !important;
     padding: 4px 10px !important;
-    font-size: 11px !important;
+    font-size: 10.5px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Bab 5 Layout in Landscape: Prevent narrative cut-off */
+  #bab5 .chapter-container,
+  .chapter-container.layout-reversed {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important;
+    gap: 1.25rem !important;
+  }
+  .visual-col, .narrative-col {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Compact Hero */
@@ -1929,78 +1982,125 @@ body {
 
 /* Mobile Portrait Mode (< 600px, portrait) */
 @media screen and (max-width: 600px) and (orientation: portrait) {
-  /* Floating Navbar: Fixed Top Pill without horizontal overflow or shift */
+  /* Navbar: at-bottom on Hero, at-top on scroll, with 6 swipeable chapters */
   .nav-wrapper {
     position: fixed !important;
-    top: 10px !important;
-    bottom: auto !important;
-    left: 12px !important;
-    right: 12px !important;
+    left: 10px !important;
+    right: 10px !important;
     width: auto !important;
     max-width: none !important;
     transform: none !important;
     z-index: 1000 !important;
+    transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .nav-wrapper.at-bottom {
+    top: auto !important;
+    bottom: 16px !important;
+  }
+  .nav-wrapper.at-top {
+    top: 10px !important;
+    bottom: auto !important;
   }
   .floating-navbar {
-    padding: 6px 14px !important;
+    padding: 4px 6px !important;
     height: 44px !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: space-between !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
     border-radius: 9999px !important;
-    box-shadow: 0 4px 16px rgba(41, 37, 36, 0.12) !important;
+    background: rgba(253, 252, 248, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid var(--border-soft) !important;
+    box-shadow: 0 4px 20px rgba(41, 37, 36, 0.14) !important;
+    overflow: hidden !important;
+  }
+  .nav-brand {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    padding-right: 4px !important;
+    border-right: 1px solid rgba(120, 113, 108, 0.15) !important;
   }
   .brand-circle {
-    width: 24px !important;
-    height: 24px !important;
+    width: 26px !important;
+    height: 26px !important;
   }
-  .brand-title {
-    font-size: 12.5px !important;
-    font-weight: 600 !important;
-  }
-  .brand-sub {
+  .brand-title, .brand-sub {
     display: none !important;
   }
   .nav-links-scroll {
-    display: none !important; /* Hide long chapter links to avoid breaking navbar */
+    display: flex !important;
+    flex: 1 1 auto !important;
+    align-items: center !important;
+    gap: 4px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    white-space: nowrap !important;
+    padding: 2px 2px !important;
+  }
+  .nav-links-scroll::-webkit-scrollbar {
+    display: none !important;
+  }
+  .nav-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 3px !important;
+    padding: 3px 8px !important;
+    border-radius: 9999px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    color: var(--text-muted) !important;
+    background: transparent !important;
+  }
+  .nav-pill.active {
+    background: var(--bg-lavender) !important;
+    color: var(--text-dark) !important;
+  }
+  .nav-pill-num {
+    font-family: var(--font-cursive) !important;
+    font-size: 12.5px !important;
+    color: var(--accent-coral-deep) !important;
   }
   .nav-pill-cta {
+    flex-shrink: 0 !important;
     display: inline-flex !important;
-    padding: 5px 12px !important;
-    font-size: 11px !important;
+    padding: 4px 9px !important;
+    font-size: 10px !important;
     white-space: nowrap !important;
   }
 
-  /* Hero Section */
+  /* Hero Section: KPI removed on mobile */
   .hero-section {
-    padding: 68px 12px 28px !important;
-    min-height: auto !important;
+    padding: 40px 14px 80px !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
   .hero-title {
-    font-size: 24px !important;
+    font-size: 27px !important;
     line-height: 1.2 !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 12px !important;
   }
   .hero-lead {
-    font-size: 12.5px !important;
-    line-height: 1.5 !important;
-    margin-bottom: 16px !important;
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 22px !important;
+    max-width: 480px !important;
   }
   .hero-actions {
     gap: 8px !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 0 !important;
   }
   .hero-actions .btn-pill-coral,
   .hero-actions .btn-pill-white {
-    padding: 8px 16px !important;
-    font-size: 11.5px !important;
-  }
-  .scenario-strip {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-  }
-  .scenario-card {
-    padding: 12px !important;
+    padding: 9px 18px !important;
+    font-size: 12px !important;
   }
 
   /* Scrollytelling Sections */
@@ -2009,11 +2109,13 @@ body {
     box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100vw !important;
+    overflow-x: hidden !important;
   }
   .chapter-container {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
   }
   .chapter-container .visual-col {
@@ -2029,7 +2131,10 @@ body {
   .chapter-container .narrative-col {
     order: 2 !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
   }
   .visual-stage-wrapper {
     position: static !important;
@@ -2075,7 +2180,7 @@ body {
     font-size: 10px !important;
   }
 
-  /* Bab 5 Sankey Specific Height & Touch Optimization */
+  /* Bab 5 Sankey Specific Height, Narrative & Touch Optimization */
   #stage-bab5 .chart-canvas {
     height: 215px !important;
     min-height: 190px !important;
@@ -2086,7 +2191,7 @@ body {
     gap: 4px !important;
   }
   #stage-bab5 #sankey-stage-title {
-    font-size: 11px !important;
+    font-size: 10.5px !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
@@ -2114,7 +2219,42 @@ body {
     font-size: 8.5px !important;
   }
   #sankey-footer-note {
-    display: none !important; /* Hide redundant hint */
+    display: none !important;
+  }
+
+  /* Bab 5 Narrative Story Step & Highlights: NEVER cut off on right */
+  #bab5 .narrative-col,
+  #bab5 .chapter-header,
+  #bab5 .story-step {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+  #bab5 .chapter-desc {
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
+    word-break: break-word !important;
+  }
+  .step-highlight-pill {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    border-radius: 12px !important;
+    padding: 7px 11px !important;
+  }
+  .highlight-label {
+    font-size: 10px !important;
+  }
+  .highlight-val {
+    font-size: 11px !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
   }
 
   /* Bab 6 Geo Flow Topbar Compactness */
@@ -2141,6 +2281,9 @@ body {
     opacity: 1 !important;
     filter: none !important;
     transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .step-title {
     font-size: 15px !important;
@@ -2149,6 +2292,7 @@ body {
   .step-text {
     font-size: 12.5px !important;
     line-height: 1.55 !important;
+    word-break: break-word !important;
   }
 
   /* Bab 4 Wide Sunburst on Mobile */
