@@ -286,7 +286,7 @@
         right: 10,
         width: 'auto',
         height: 'auto',
-        roam: true,
+        roam: false,
         nodeClick: 'zoomToNode',
         breadcrumb: {
           show: true, // Memenuhi rubrik ujian: penunjuk posisi (breadcrumb) saat drill-down
