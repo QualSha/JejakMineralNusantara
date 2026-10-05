@@ -1,9 +1,0 @@
-es('GLOBAL TOOLTIPS & LEAFLET OVERRIDES') || line.includes('DASHBOARD LAYOUT (dashboard_2.html)')) {
-    try {
-      const obj = JSON.parse(line);
-      const content = JSON.stringify(obj);
-      console.log('Found step index:', obj.step_index, 'type:', obj.type);
-    } catch(e) {}
-  }
-}
-"","Cwd":"c:\Users\Haykal Pasha Siregar\Documents\Web\uas-visdat-story","WaitMsBeforeAsync":5000,"toolAction":"Searching transcript for original editorial.css","toolSummary":"Find editorial.css in conversation transcript"}}]}
